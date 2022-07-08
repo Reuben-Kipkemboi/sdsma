@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # SDS
 This is a platform where students can get authentic and verified information/inspiration/advice about the tech space.
 =======
@@ -28,4 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
->>>>>>> ac09922 (initial commit)
+
+## Live Link
+'https://polite-fairy-12efa3.netlify.app/'
+'https://josephatngugi.github.io/Motivation-App-Frontend'

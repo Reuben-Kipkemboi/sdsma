@@ -1,0 +1,8 @@
+.category-container{
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    width:500px;
+    margin-top:5%;
+}
+

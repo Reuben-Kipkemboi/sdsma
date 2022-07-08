@@ -1,0 +1,43 @@
+
+ <div class="container  mt-4" style="">
+<div class="row">
+<div class="col-md-4">
+        <div class="card category-card mb-4" style="background-color:#d9d9d9  ">
+          <div class="card-body text-center" style="color:black;">
+             <h3>Categories</h3>
+              <hr>
+            <h5 class="btn btn-lg mb-4">Devops</h5>
+            <br>
+            <h5 class="btn btn-lg mb-4">Backend</h5>
+            <br>
+            <h5 class="btn btn-lg mb-4">Frontend</h5>
+            <br>
+            <h5 class="btn btn-lg mb-4">Machine-Learning</h5>
+            <br>
+            <h5 class=" btn btn-lg mb-4">UI/UX design</h5>
+            <br>
+            <h5 class=" btn btn-lg mb-4">Fullstack</h5>
+            <br>
+            <h5 class=" btn btn-lg mb-4">Data Science</h5>
+            <hr>
+            <br>
+           
+           
+
+            
+
+            <div class="d-flex justify-content-center mb-2">
+                <a routerLink="/category-form"   href="#" class="btn btn-light btn-lg"> Add Category</a>
+            </div>
+          </div>
+        </div>
+</div>
+
+</div>
+
+<div>
+<ul *ngFor="let category of categories">
+  <li>{{category.type}}</li>
+  <li></li>
+</ul>
+</div>

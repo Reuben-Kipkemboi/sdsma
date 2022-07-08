@@ -1,0 +1,60 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4 staff-post">
+      <div class="mb-4">
+        <div class="">
+          <img
+            src="https://media.istockphoto.com/vectors/user-member-vector-icon-for-ui-user-interface-or-profile-face-avatar-vector-id1130884625?k=20&m=1130884625&s=612x612&w=0&h=OITK5Otm_lRj7Cx8mBhm7NtLTEHvp6v3XnZFLZmuB9o="
+            alt=""
+            class="rounded-circle img-fluid"
+            style="width: 100px"
+          />
+          <a
+            routerLink="/staff-content-form"
+            href="#"
+            class="btn btn-lg"
+            style="width: 700px; background-color: #3bb7e5"
+          >
+            create post
+          </a>
+        </div>
+        <br />
+        <div class="card" style="width: 100%" *ngFor="let post of postArr">
+          <img
+            src="{{post.content_image}}"
+            class="card-img-top"
+            alt="post pic"
+            style=""
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ post.content_name }}</h5>
+            <p class="card-text">{{post.description}} </p>
+          </div>
+          <div class="small d-flex justify-content-center mx-4">
+            <a href="#!" class="d-flex align-items-center me-3">
+              <i class="far fa-thumbs-up me-2"></i>
+              <p class="mb-0">Like</p>
+            </a>
+            <a href="#" class="d-flex align-items-center me-3">
+              <i class="far fa-comment-dots me-2"></i>
+              <p class="mb-0">Comment</p>
+            </a>
+            <a href="#!" class="d-flex align-items-center me-3">
+              <i class="fas fa-share me-2"></i>
+              <p class="mb-0">Share</p>
+            </a>
+            <a href="#!" class="d-flex align-items-center me-3">
+              <i class="fas fa-pen me-2"></i>
+              <p class="mb-0">Edit</p>
+            </a>
+            <a href="#!" class="d-flex align-items-center me-3">
+              <i class="far fa-trash-alt me-2"></i>
+              <p class="mb-0">Delete</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
