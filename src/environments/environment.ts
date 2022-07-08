@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl:'https://software-dev-motivation.herokuapp.com'
+  apiUrl: 'https://moti-vate.herokuapp.com',
 };
 
 /*

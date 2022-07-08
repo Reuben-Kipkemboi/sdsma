@@ -1,5 +1,5 @@
 export class Post {
-  id!: string;
+  id!: number;
   content_name!: string;
   content_image!: string;
   video!: string;
