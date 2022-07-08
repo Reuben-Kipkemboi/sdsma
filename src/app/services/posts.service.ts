@@ -17,7 +17,5 @@ export class PostsService {
     return this.http.get(environment.apiUrl+'/staff/post/')
   }
 
-  getStudentPosts(): Observable<any>{
-    return this.http.get(environment.apiUrl+'/student/post/')
-  }
+  
 }
