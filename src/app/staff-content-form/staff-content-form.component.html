@@ -4,7 +4,7 @@
     <div class="col-md-6">
       <div class="card" style="margin-left: 40px">
         <div>
-          <form class="border border-primary staff-content-form p-5 text-center">
+          <form (ngSubmit)="createPosts(f)" #f="ngForm"class="border border-primary staff-content-form p-5 text-center">
             <p class="h4 mb-4 ">Create post</p>
             <!-- Name -->
             <input
@@ -12,6 +12,9 @@
               id="defaultSubscriptionFormPassword"
               class="form-control mb-4"
               placeholder="Name"
+              name="content_name"
+              required ngModel
+                #content_name="ngModel"
             />
             
             <textarea
@@ -19,23 +22,42 @@
               id="exampleFormControlTextarea1"
               rows="5"
               placeholder="Description"
+              name="description"
+              required ngModel
+                #description="ngModel"
             ></textarea>
 
             <br>
             
-            <input
-              type="text"
-              id="defaultSubscriptionFormPassword"
-              class="form-control mb-4"
+            <select
+              type="select"
+              id="category"
+              class="form-select mb-4"
               placeholder="Category"
-            />
+              name="category"
+              required ngModel
+                #category="ngModel"
+            > <option value selected disabled>--Select Category--</option></select>
             <label class="custom-file-label" for="customFile"
               ></label
             >
-            <input type="file" class="form-control" id="customFile" />
+            <input type="file" class="form-control" id="customFile"  name="content_image" required ngModel
+                #content_image="ngModel"/>
+            <!-- <select  type="select"  class="form-select"    name="" id="" >
+            <option value selected disabled>--Select file--</option>
+            <option  name="content_image" required ngModel
+                #content_image="ngModel">
+            <input type="file" class="form-control" id="customFile"  name="content_image"/>
+                Image</option>
+            <option  name="video" required ngModel
+                #video="ngModel">Video</option>
+          
+          </select> -->
+
+          
             <br />
             <!-- Sign in button -->
-            <button class="btn btn-primary text-center"  type="submit">
+            <button class="btn btn-primary text-center"  type="submit" >
               Submit
             </button>
           </form>
