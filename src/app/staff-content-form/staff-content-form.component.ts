@@ -26,7 +26,7 @@ export class StaffContentFormComponent implements OnInit {
   userId: any;
 
   ngOnInit(): void {
-    
+
   }
 
   createPosts(form: NgForm) {
@@ -44,9 +44,9 @@ export class StaffContentFormComponent implements OnInit {
           form.reset();
           this.router.navigate(['/staff-page']);
         })
-       
-    
+
+
   }
-  
+
 }
 

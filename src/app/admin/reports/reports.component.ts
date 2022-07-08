@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ThemePalette} from '@angular/material/core';
 import {ProgressBarMode} from '@angular/material/progress-bar';
-import { PostsService } from '../../services/posts.service';
+import { PostsService } from '../../_services/posts.service';
 import { Router } from '@angular/router';
 
 

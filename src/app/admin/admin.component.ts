@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsService } from '../services/posts.service';
+import { PostsService } from '../_services/posts.service';
 import { Router } from '@angular/router';
-
+import { CommentsService } from '../services/comments.service'
 
 @Component({
   selector: 'app-admin',
@@ -10,20 +10,29 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
   postArr: any = [];
-  
+  commentlist:any=[];
+
   ngOnInit() {
     this.getPosts();
+    this.getComments();
 
   }
 
   constructor(
     private router: Router,
-    private postsService: PostsService
+    private postsService: PostsService,
+    private commentsService: CommentsService
   ) { }
 
   getPosts() {
     this.postsService.getPosts().subscribe(data => {
       this.postArr = data;
+    })
+  }
+
+  getComments() {
+    this.commentsService.getComments().subscribe(data => {
+      this.commentlist = data;
     })
   }
 

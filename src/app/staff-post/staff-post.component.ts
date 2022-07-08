@@ -14,7 +14,7 @@ export class StaffPostComponent implements OnInit {
     this.getPosts();
   }
 
-  constructor(private router: Router, 
+  constructor(private router: Router,
     private postsService: PostsService) {}
 
   getPosts() {
