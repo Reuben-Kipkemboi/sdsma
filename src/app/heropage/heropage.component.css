@@ -4,23 +4,34 @@
   justify-content: flex-end;
 
 }
+.heropage-image{
+  width: 60%;
+
+
+}
+.heropage-image img{
+  max-width: 100%;
+  max-height: 100%;
+}
 .hero-container{
-  background-repeat: no-repeat;
-  background-size:contain;
-  background-image:url('/assets/images/jumbo-image.png');
-  height: 100vh;
+  margin-top: 30px;
 
 }
+.image-hero{
+  display: flex;
+  justify-content: flex-end;
+}
+
 .heropage-text{
-  margin-top: 10px;
+  margin-top: 60px;
 }
 
-.hero-img{
+/* .hero-img{
   width:20%;
 }
 .hero-img img{
   max-width: 100%;
-}
+} */
 .heropage-images{
   display: flex;
   justify-content: space-between;
@@ -81,6 +92,7 @@
 
 .reviews{
   margin-bottom: 40px;
+  margin-top: 50px;
 
 }
 .reviews-content{
@@ -93,7 +105,11 @@ i{
 
 .review-text{
   margin-left: 30px;
+
 }
 .support{
   font-size: 28px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+
 }
