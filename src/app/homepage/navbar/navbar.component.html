@@ -1,38 +1,53 @@
-<nav class="navbar navbar-expand-lg shadow-none" style="border: none">
-  <div class="container-fluid">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div
-      class="collapse navbar-collapse"
-      id="navbarSupportedContent"
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container-fluid mx-4">
+    <!-- Navbar brand -->
+    <a class="navbar-brand" [routerLink]="['/homepage']">
+      <img src="assets/images/logo.png" height="40" alt="" loading="lazy" />
+    </a>
 
-    >
+    <!-- Toggle button -->
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#"
-            >Home</a
-          >
+          <a class="nav-link active" aria-current="page" [routerLink]="['/homepage']">Home</a>
         </li>
-
-        <div class="justify-content-between collapse navbar-collapse">
-          <li class="nav-item me-auto">
-            <a class="nav-link disabled">Signup</a>
-          </li>
-        </div>
-
+        <li class="nav-item ">
+          <a class="nav-link" href="#"></a>
+        </li>
       </ul>
-    </div>
-  </div>
-</nav>
+      <!-- Left links -->
 
-<div class="col-md-8"> <app-content></app-content>
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <!-- Navbar dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle hidden-arrow" href="#" id="navbarDropdown" role="button"
+            data-mdb-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-bell"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/login']">Sign In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/register']">Sign Up</a>
+        </li>
+      </ul>
+
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+<div class="col-md-8">
+  <app-content></app-content>
 </div>

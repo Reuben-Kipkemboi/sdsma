@@ -7,15 +7,16 @@
 
 
     <div>
-      <div class="user-details" >Username</div>
-      <div class="user-details">Bio</div>
-      <div class="user-details">Contact</div>
+      <div class="user-details" >Username</div><hr>
+      <div class="user-details">Bio</div><hr>
+      <div class="user-details">Contact</div><hr>
     </div>
   </mat-grid-tile>
 
   <mat-grid-tile rowspan="1" colspan="1">
     <div id="username" class="admin-sector">
-      <div>New Post</div>
+      <div> <p>Number of Posts:</p>
+         {{postArr.length}}</div>
     </div>
   </mat-grid-tile>
 
@@ -27,8 +28,6 @@
 
   </div>
   </mat-grid-tile>
-
-
 
   <mat-grid-tile rowspan="3" colspan="3" style="background-color: #D9D9D9" >
     <app-reports></app-reports>
@@ -66,7 +65,7 @@
       <div class="mem" style="background-color: white"></div>
     </div>
   </mat-grid-tile>
-  <mat-grid-tile rowspan="3" colspan="3" style="background-color: #D9D9D9" >9
+  <mat-grid-tile rowspan="3" colspan="3" style="background-color: #D9D9D9" ><app-admincontent></app-admincontent>
   </mat-grid-tile>
   <mat-grid-tile rowspan="2" colspan="2" style="background-color: #D9D9D9">
     10

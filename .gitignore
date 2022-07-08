@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -128,7 +128,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-=======
+
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
@@ -171,4 +171,4 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
->>>>>>> ac09922 (initial commit)
+

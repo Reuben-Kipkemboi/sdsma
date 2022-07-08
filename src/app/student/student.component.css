@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+main{
+position: relative;
+}
+.lefty{
+    height: 100vh;
+    width: 30%;
+    margin-top: -7px;
+}
+.righty{
+    position: absolute;
+    height: 100vh;
+    width: 30%;
+    background-color: #3bb8e52a;
+    left: 89.8%;
+    z-index: -1;
+}
+
+.create-post{
+    width: auto;
+}
