@@ -5,10 +5,16 @@
 
 }
 .heropage-image{
-  width: 60%;
-
+  width: 110%;
+  /* position: absolute;
+  left: 40%;
+  top: 20%;
+  z-index: -1; */
 
 }
+/* .heroimage-container{
+  height: 70vh;
+} */
 .heropage-image img{
   max-width: 100%;
   max-height: 100%;
@@ -24,6 +30,8 @@
 
 .heropage-text{
   margin-top: 60px;
+  /* position: relative; */
+
 }
 
 /* .hero-img{
