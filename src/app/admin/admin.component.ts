@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../services/posts.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -9,8 +10,10 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
   postArr: any = [];
+  
   ngOnInit() {
     this.getPosts();
+
   }
 
   constructor(
@@ -23,4 +26,6 @@ export class AdminComponent implements OnInit {
       this.postArr = data;
     })
   }
+
+
 }

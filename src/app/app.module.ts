@@ -18,6 +18,7 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ReportsComponent } from './admin/reports/reports.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { AdmincontentComponent } from './admin/admincontent/admincontent.component';
+import { UsersComponent } from './admin/users/users.component';
 // import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
@@ -33,6 +34,7 @@ import { AdmincontentComponent } from './admin/admincontent/admincontent.compone
     EditprofileComponent,
     ReportsComponent,
     AdmincontentComponent,
+    UsersComponent,
 
 
   ],
