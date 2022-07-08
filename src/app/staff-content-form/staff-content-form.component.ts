@@ -25,9 +25,7 @@ export class StaffContentFormComponent implements OnInit {
   loading = false;
   userId: any;
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   createPosts(form: NgForm) {
     let data = form.form.value;
