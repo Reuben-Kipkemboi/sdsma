@@ -22,7 +22,7 @@ import { ContentComponent } from './homepage/content/content.component';
 import { HeronavbarComponent } from './heropage/heronavbar/heronavbar.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ReportsComponent } from './admin/reports/reports.component';
-
+import { UsersComponent } from './admin/users/users.component';
 import { SinglePostComponent } from './single-post/single-post.component';
 import { StaffProfileComponent } from './staff-profile/staff-profile.component';
 import { StaffPageComponent } from './staff-page/staff-page.component';
@@ -64,6 +64,7 @@ import { ErrorInterceptor, JwtInterceptor } from './_helpers';
     EditprofileComponent,
     ReportsComponent,
     AdmincontentComponent,
+    UsersComponent,
     SinglePostComponent,
     StaffProfileComponent,
     StaffPageComponent,
