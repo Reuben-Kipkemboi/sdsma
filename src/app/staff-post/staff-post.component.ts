@@ -14,12 +14,16 @@ export class StaffPostComponent implements OnInit {
     this.getPosts();
   }
 
-  constructor(private router: Router, 
-    private postsService: PostsService) {}
+  constructor(private router: Router, private postsService: PostsService) {}
 
   getPosts() {
     this.postsService.getPosts().subscribe((data) => {
       this.postArr = data;
     });
   }
+
+  
+
+  
 }
+

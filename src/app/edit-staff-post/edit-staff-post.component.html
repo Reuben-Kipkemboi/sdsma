@@ -5,12 +5,14 @@
       <div class="card" style="margin-left: 40px">
         <div>
           <form
-            (ngSubmit)="createPosts(f)"
+            (ngSubmit)="updatePosts(f)"
             #f="ngForm"
             class="border border-primary staff-content-form p-5 text-center"
           >
-            <p class="h4 mb-4">Create post</p>
-            <!-- Name -->
+          <input type="hidden" name="id" value="{{ post?.id }}">
+
+            <p class="h4 mb-4">Update post</p>
+        
             <input
               type="text"
               id="name"
@@ -20,6 +22,7 @@
               required
               ngModel
               #content_name="ngModel"
+              value="{{ post?.content_name }}"
             />
 
             <textarea
@@ -31,6 +34,7 @@
               required
               ngModel
               #description="ngModel"
+              value="{{ post?.description }}"
             ></textarea>
 
             <br />
@@ -39,14 +43,14 @@
             <select  type="select" id="category" class="form-select mb-4 " name="category">
               <option value selected disabled>--Choose a Category--</option>
       
-              <option *ngFor="let category of categories" [ngValue]="category">
+              <option *ngFor="let category of categories" [ngValue]="category" value="{{post?.id}}">
                 {{ category.type }}
-              </option></select
+              </option>
+              
+              </select
             ><br />
 
             
-            
-
             <!-- <label class="custom-file-label" for="customFile"></label>
 
             <input
@@ -57,6 +61,7 @@
               required
               ngModel
               #content_image="ngModel"
+              value="{{post?.id}}"
             /> -->
 
             <!-- <select  type="select"  class="form-select"    name="" id="" >
@@ -81,3 +86,4 @@
     </div>
   </div>
 </div>
+

@@ -39,6 +39,7 @@ import { PanelComponent } from './student/panel/panel.component';
 import { CategoriesComponent } from './student/panel/categories/categories.component';
 import { StdSuggestionComponent } from './student/panel/std-suggestion/std-suggestion.component';
 import { StdNavComponent } from './student/std-nav/std-nav.component';
+import { EditStaffPostComponent } from './edit-staff-post/edit-staff-post.component';
 
 import { ErrorInterceptor, JwtInterceptor } from './_helpers';
 
@@ -75,6 +76,7 @@ import { ErrorInterceptor, JwtInterceptor } from './_helpers';
     StaffContentFormComponent,
     FooterComponent,
     EditStaffprofileComponent,
+    EditStaffPostComponent,
     StdNavComponent,
   ],
   imports: [
