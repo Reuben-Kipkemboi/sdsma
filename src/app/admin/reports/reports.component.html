@@ -3,12 +3,13 @@
   <p>Reports</p>
   <div >
 
-    <div *ngFor="let post of postArr">
-    <p>Number of Posts:</p>
+    <div *ngFor="let report of admin_reportlist">
+      <ul><li>{{report.type}}</li></ul>
 
   </div>
 
 <div class="motivation">Motivation
+
 <mat-progress-bar style="height: 20px;
 " [mode]="'determinate'"
 [value]="value"

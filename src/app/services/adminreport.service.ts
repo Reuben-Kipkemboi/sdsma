@@ -13,6 +13,6 @@ export class AdminreportService {
   constructor(private http:HttpClient) { }
   // get all reports
   getadmin_report():Observable<any> {
-    return this.http.get(environment.apiUrl+'/staff/create_reports/')
+    return this.http.get(environment.apiUrl+'/staff/create_categories/')
   }
 }
