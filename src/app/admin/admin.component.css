@@ -56,17 +56,12 @@ border: 1px solid rgb(0 0 0 / 0.1);
 #users{
  width:330px; height:93px; background-color:#D9D9D9; margin-top:12px;
  display: flex;
-  justify-content: space-between;
+ justify-content: space-between;
   align-items: center;
   border: 1px solid, transparent;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
-#users i{
-  color:#5270FC;
-  font-size: 43px;
-  margin-left: 5px;
 
-}
 .user-info{
   display: flex;
   justify-content: space-between;
@@ -85,6 +80,13 @@ border: 1px solid rgb(0 0 0 / 0.1);
   height: 20px;
   margin: 10px;
   border-radius: 50%;
+}
+.user-details button a{
 
+  text-decoration: none;
 
+}
+.user-details button {
+  border:none;
+  margin-top: 10px;
 }

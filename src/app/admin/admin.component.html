@@ -10,12 +10,17 @@
       <div class="user-details" >Username</div><hr>
       <div class="user-details">Bio</div><hr>
       <div class="user-details">Contact</div><hr>
+      <div class="user-details"><button><a routerLink="/editprofile/">Edit Profile</a>
+
+      </button>
+
+      </div>
     </div>
   </mat-grid-tile>
 
   <mat-grid-tile rowspan="1" colspan="1">
     <div id="username" class="admin-sector">
-      <div> <p>Number of Posts:</p>
+      <div align="center"> <p>Number of Posts:</p>
          {{postArr.length}}</div>
     </div>
   </mat-grid-tile>
@@ -23,7 +28,8 @@
   <mat-grid-tile rowspan="1" colspan="1" >
     <div id="uploads" class="admin-sector" style="width:140px; height:100px; margin-left: -35px;">
       <div>
-      File Uploads
+        <div align="center"> <p>Uploads:</p>
+          {{postArr.length}}</div>
     </div>
 
   </div>
@@ -49,11 +55,10 @@
   </mat-grid-tile>
 
   <mat-grid-tile rowspan="1" colspan="2" >
+
     <div  id="users" >
-      <div class="user-">
-        <div><i class="fa-solid fa-user-group"></i></div>
-        <div >staff and users</div>
-        </div>
+      <app-users></app-users>
+
     </div>
   </mat-grid-tile>
 
