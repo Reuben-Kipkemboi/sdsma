@@ -5,6 +5,11 @@ import { PostsService } from '../../_services/posts.service';
 import { Router } from '@angular/router';
 import { AdminreportService } from '../../services/adminreport.service'
 
+// //external js function declaration
+// declare function getToday(): any;
+// declare function greetings(name: any): any;
+declare function reportDisplay(): any;
+
 @Component({
   selector: 'app-reports',
   templateUrl: './reports.component.html',
@@ -17,6 +22,7 @@ export class ReportsComponent implements OnInit {
   value = 50;
   videos = 40;
 
+
   constructor(
     private router: Router,
     private adminreportService: AdminreportService,
@@ -28,8 +34,12 @@ export class ReportsComponent implements OnInit {
   }
 
   ngOnInit() {
+    // // call the externaljs functions
+    // getToday(); // without param
+    // greetings('rohol'); // with param
 
     this.getadmin_report();
+
   }
 
 }
