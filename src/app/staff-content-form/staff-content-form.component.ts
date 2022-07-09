@@ -24,27 +24,50 @@ export class StaffContentFormComponent implements OnInit {
   error = false;
   loading = false;
   userId: any;
+  // selectedFile: any;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getCategory();
+  }
+
+  // processFile(imageInput: any) {
+  //   const file: File = imageInput.files[0];
+  //   const reader = new FileReader();
+
+  //   reader.addEventListener('load', (event: any) => {
+  //     this.selectedFile = new ImageSnippet(event.target.result, file);
+
+  //     this.postsService.uploadImage(this.selectedFile.file).subscribe(
+  //       (res) => {},
+  //       (err) => {}
+  //     );
+  //   });
+
+  //   reader.readAsDataURL(file);
+  // }
 
   createPosts(form: NgForm) {
     let data = form.form.value;
     this.loading = true;
-    this.post.createPosts(
-      data.content_name,
-      data.content_image,
-      data.video,
-      data.description,
-      data.category
-    )
-      .subscribe(
-        (response) => {
-          form.reset();
-          this.router.navigate(['/staff-page']);
-        })
-       
-    
+    this.post
+      .createPosts(
+        data.id,
+        data.content_name,
+        data.content_image,
+        data.video,
+        data.description,
+        data.category
+      )
+      .subscribe((response) => {
+        form.reset();
+        this.router.navigate(['/staff-page']);
+      });
   }
-  
+
+  getCategory() {
+    this.categoryService.getCategory().subscribe((data) => {
+      this.categories = data;
+    });
+  }
 }
 

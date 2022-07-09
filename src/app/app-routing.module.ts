@@ -1,3 +1,4 @@
+import { EditStaffPostComponent } from './edit-staff-post/edit-staff-post.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -23,11 +24,12 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {
-    path:'student', component:StudentComponent,
-    children:[
-      {path: 'profile/edit', component: StdProfileComponent},
-      {path: 'add/post', component: StdPostFormComponent}
-    ]
+    path: 'student',
+    component: StudentComponent,
+    children: [
+      { path: 'profile/edit', component: StdProfileComponent },
+      { path: 'add/post', component: StdPostFormComponent },
+    ],
   },
   { path: 'admin', component: AdminComponent },
   { path: 'homepage', component: HomepageComponent },
@@ -41,7 +43,8 @@ const routes: Routes = [
   { path: 'staff-content-form', component: StaffContentFormComponent },
   { path: 'category-form', component: CategoryFormComponent },
   { path: 'footer', component: FooterComponent },
-  { path: 'edit-staffprofile', component:EditStaffprofileComponent},
+  { path: 'edit-staff-post/:id', component: EditStaffPostComponent },
+  
 ];
 
 @NgModule({
@@ -49,4 +52,11 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule { }
-export const routingComponents=[StaffProfileComponent,StaffPageComponent,CategoryComponent,StaffContentFormComponent,CategoryFormComponent,FooterComponent,EditStaffprofileComponent]
+export const routingComponents=[StaffProfileComponent,
+  StaffPageComponent,
+  CategoryComponent,
+  StaffContentFormComponent,
+  CategoryFormComponent,
+  FooterComponent,
+  EditStaffprofileComponent,
+  EditStaffPostComponent]

@@ -18,13 +18,31 @@ export class PostsService {
   }
 
   createPosts(
+    id: number,
     content_name: string,
-    content_image:string,
-    video:string,
-    description:string,
-    category:string,) 
-    {
-    return this.http.post(environment.apiUrl + '/staff/post/', {
+    content_image: string,
+    video: string,
+    description: string,
+    category: string
+  ) {
+    return this.http.post('https://moti-vate.herokuapp.com/staff/post/', {
+      id,
+      content_name,
+      content_image,
+      video,
+      description,
+      category,
+    });
+  }
+  updatePosts(
+    id: number,
+    content_name: string,
+    content_image: string,
+    video: string,
+    description: string,
+    category: string
+  ) {
+    return this.http.put('https://moti-vate.herokuapp.com/staff/post/' + id, {
       content_name,
       content_image,
       video,
@@ -33,17 +51,19 @@ export class PostsService {
     });
   }
 
-  editPosts(val: any) {
-    return this.http.put(this.apiUrl + '/staff/post/', val);
+  getSinglePost(id: number) {
+    return this.http.get('https://moti-vate.herokuapp.com/staff/post/' + id);
   }
+
+  deleteJob(id: number) {
+    return this.http.delete('https://moti-vate.herokuapp.com/staff/post/' + id);
+  }
+
+ 
   likePosts(val: any) {
     return this.http.post(this.apiUrl + '/staff/post/', val);
   }
   sharePosts(val: any) {
     return this.http.post(this.apiUrl + '/staff/post/', val);
-  }
-
-  deletePosts(id:number) {
-    return this.http.delete(this.apiUrl + '/post/'+ id);
   }
 }
