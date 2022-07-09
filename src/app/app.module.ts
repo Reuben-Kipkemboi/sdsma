@@ -40,6 +40,7 @@ import { CategoriesComponent } from './student/panel/categories/categories.compo
 import { StdSuggestionComponent } from './student/panel/std-suggestion/std-suggestion.component';
 
 import { ErrorInterceptor, JwtInterceptor } from './_helpers';
+import { PostdetailsComponent } from './postdetails/postdetails.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { ErrorInterceptor, JwtInterceptor } from './_helpers';
     StaffContentFormComponent,
     FooterComponent,
     EditStaffprofileComponent,
+    PostdetailsComponent,
   ],
   imports: [
     BrowserModule,

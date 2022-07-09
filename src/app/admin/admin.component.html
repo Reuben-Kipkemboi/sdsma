@@ -36,7 +36,8 @@
   </mat-grid-tile>
 
   <mat-grid-tile rowspan="3" colspan="3" style="background-color: #D9D9D9" >
-    <app-reports></app-reports>
+    <!-- <app-reports></app-reports> -->
+
   </mat-grid-tile>
 
   <mat-grid-tile rowspan="1" colspan="1" >
@@ -76,7 +77,8 @@
   <mat-grid-tile rowspan="3" colspan="3" style="background-color: #D9D9D9" ><app-admincontent></app-admincontent>
   </mat-grid-tile>
   <mat-grid-tile rowspan="2" colspan="2" style="background-color: #D9D9D9">
-    10
+    <div><ul *ngFor="let user of userslist"> <li>{{ user.username }}</li></ul></div>
+
   </mat-grid-tile>
 
 </mat-grid-list>

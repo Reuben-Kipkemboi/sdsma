@@ -18,6 +18,8 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { HeropageComponent } from './heropage/heropage.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FooterComponent } from './footer/footer.component';
+import { PostdetailsComponent } from './postdetails/postdetails.component';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -42,6 +44,8 @@ const routes: Routes = [
   { path: 'category-form', component: CategoryFormComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'edit-staffprofile', component:EditStaffprofileComponent},
+  { path: 'post-details/:id', component:PostdetailsComponent}
+
 ];
 
 @NgModule({
@@ -49,4 +53,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule { }
-export const routingComponents=[StaffProfileComponent,StaffPageComponent,CategoryComponent,StaffContentFormComponent,CategoryFormComponent,FooterComponent,EditStaffprofileComponent]
+export const routingComponents=[StaffProfileComponent,StaffPageComponent,CategoryComponent,StaffContentFormComponent,CategoryFormComponent,FooterComponent,EditStaffprofileComponent,]

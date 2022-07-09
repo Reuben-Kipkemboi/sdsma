@@ -1,11 +1,16 @@
 <p>admincontent works!</p>
-<!-- <circle-progress [percent]="70" [radius]="100" [outerStrokeWidth]="20" [innerStrokeWidth]="10"
-  [outerStrokeColor]="'#3777BE'" [innerStrokeColor]="'#7f9fc1'" [animation]="true" [animationDuration]="300"
-  [subtitleFontSize]="percent"></circle-progress> -->
+<ul *ngFor="let post of postArr">
+  <li>
+    {{post.content_name}}
+    <a routerLink="/post-details/{{post.id}}/" class="btn view-details">
+      View Details
+    </a>
+    <button>Delete</button>
+  </li>
+</ul>
 
-  <!-- <circle-progress [percent]="70" [radius]="100" [outerStrokeWidth]="20" [innerStrokeWidth]="10"
- [animation]="true" [animationDuration]="300"
-  [subtitleFontSize]="percent"></circle-progress> -->
+
+
 
 
 

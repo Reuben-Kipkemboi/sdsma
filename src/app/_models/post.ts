@@ -5,5 +5,5 @@ export class Post {
   video!: string;
   description!: string;
   category!: string;
-  
+
 }
