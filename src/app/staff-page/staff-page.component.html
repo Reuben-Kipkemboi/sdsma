@@ -1,10 +1,26 @@
-
-<div class="container-fluid d-flex">
-  
-  <app-staff-profile></app-staff-profile>
-  <app-staff-post></app-staff-post>
-  <app-category></app-category>
-
-
+<div class="container-fluid">
+  <div class="row">
+    <ul *ngFor="let post of listposts">
+      <div class="col-md-7 mx-auto">
+        <!-- <div class="col-md-12"> -->
+          <div class="card bg-light">
+            <p class="text-center text-primary fs-3">Content Name:->{{post.content_name}}</p>
+            <p class="text-black fs-5">Description:->{{post.description}}</p>
+            <small>Masaa:  {{post.date_posted | date }}</small>
+          <!-- </div> -->
+        </div>
+      </div>
+    </ul>
+  </div>
 </div>
 
+
+
+
+
+
+
+
+<!-- <app-staff-profile></app-staff-profile>
+  <app-staff-post></app-staff-post>
+  <app-category></app-category>  -->

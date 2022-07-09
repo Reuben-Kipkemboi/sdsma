@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl:'https://localhost:4000'
+  apiUrl:'https://moti-vate.herokuapp.com'
+  
 };
 
 /*

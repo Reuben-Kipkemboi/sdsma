@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -60,6 +61,7 @@ import { ErrorInterceptor, JwtInterceptor } from './_helpers';
     StaffContentFormComponent,
     FooterComponent,
     EditStaffprofileComponent,
+    // HttpClientModule,
   ],
   imports: [
     BrowserModule,

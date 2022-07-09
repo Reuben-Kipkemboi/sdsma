@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { TestServicesService } from '../services/test-services.service';
+// import {} from Services/TestServicesService'
+import { Post } from '../class/post';
+
 
 @Component({
   selector: 'app-staff-page',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StaffPageComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private TestEveningServicesService: TestServicesService) { }
+  listposts: Post [] = [];
   ngOnInit(): void {
+
+    this.TestEveningServicesService.getPosts()
+    .subscribe(
+      data=>{
+        this.listposts=data
+      }
+    );
   }
 
 }
