@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminpostService } from '../services/adminpost.service'
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -10,13 +11,19 @@ import { AdminpostService } from '../services/adminpost.service'
 export class PostdetailsComponent implements OnInit {
   adminpostArr:any=[];
   id:any;
+  // route: any;
 
   constructor(
     private adminpostService: AdminpostService,
+    private route: ActivatedRoute,
+
   ) { }
 
   ngOnInit(){
-    this.getAdmin_post(this.id);
+    this.route.params.subscribe((params:any) =>
+     { console.log(params)
+    this.getAdmin_post(params.id);}
+    )
   }
 
   getAdmin_post(id: number){
@@ -24,5 +31,11 @@ export class PostdetailsComponent implements OnInit {
       this.adminpostArr = data;
     })
   }
+
+  // deleteAdmin_post(id: number) {
+  //   this.adminpostService.deleteAdmin_post(id).subscribe((response) => {
+
+  //   });
+  // }
 
 }

@@ -5,7 +5,7 @@
     <a routerLink="/post-details/{{post.id}}/" class="btn view-details">
       View Details
     </a>
-    <button>Delete</button>
+    <a (click)="deleteAdmin_post(post.id)" style="cursor: pointer;"><i class="fa fa-trash text-danger"></i></a>
   </li>
 </ul>
 

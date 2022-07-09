@@ -15,6 +15,11 @@ export class AdminpostService {
   }
   // get all adminposts
   getAdmin_post(id:number): Observable<any> {
-    return this.http.get(environment.apiUrl + '/admin/post/{id}/' + id);
+    return this.http.get(environment.apiUrl + `/admin/post/${id}/`);
+  }
+
+  // delete post
+  deleteAdmin_post(id: number) {
+    return this.http.delete(environment.apiUrl + `/admin/post/${id}/`);
   }
 }

@@ -33,4 +33,10 @@ export class AdmincontentComponent implements OnInit {
       this.postArr = data;
     });
   }
+
+  deleteAdmin_post(id: number) {
+    this.adminpostService.deleteAdmin_post(id).subscribe((response) => {
+
+    });
+  }
 }

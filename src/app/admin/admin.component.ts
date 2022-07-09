@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { CommentsService } from '../services/comments.service'
 import { LikesService } from '../services/likes.service'
 import { UsersService } from '../services/users.service'
+import { AdminreportService } from '../services/adminreport.service'
+
 
 @Component({
   selector: 'app-admin',
@@ -15,12 +17,14 @@ export class AdminComponent implements OnInit {
   commentlist:any=[];
   likeslist:any=[];
   userslist:any=[];
+  admin_reportlist:any=[];
 
   ngOnInit() {
     this.getPosts();
     this.getComments();
     this.getLikes();
     this.getUsers();
+    this.getadmin_report();
 
   }
 
@@ -30,6 +34,7 @@ export class AdminComponent implements OnInit {
     private commentsService: CommentsService,
     private likesService: LikesService,
     private usersService: UsersService,
+    private adminreportService: AdminreportService,
   ) { }
 
   getPosts() {
@@ -55,6 +60,14 @@ export class AdminComponent implements OnInit {
       this.userslist = data;
     })
   }
+
+  getadmin_report() {
+    this.adminreportService.getadmin_report().subscribe(data => {
+      this.admin_reportlist = data;
+    })
+  }
+
+
 
 
 }
