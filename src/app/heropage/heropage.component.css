@@ -9,7 +9,7 @@
   background-size:contain;
   background-image:url('/assets/images/jumbo-image.png');
   height: 100vh;
- 
+
 }
 .heropage-text{
   margin-top: 10px;
@@ -17,7 +17,6 @@
 
 .hero-img{
   width:20%;
-
 }
 .hero-img img{
   max-width: 100%;
@@ -26,7 +25,6 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-
 }
 .hero-img p{
   margin-top: 5px;
