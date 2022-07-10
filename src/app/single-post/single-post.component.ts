@@ -31,6 +31,12 @@ export class SinglePostComponent implements OnInit {
     });
   }
 
+  getSinglePost(id: number) {
+    this.posts.getSinglePost(id).subscribe((response) => {
+      this.successMessage = '';
+    });
+  }
+
   deletePost(id: number) {
     this.posts.deletePost(id).subscribe((response) => {
       this.successMessage = 'post removed';
@@ -38,9 +44,8 @@ export class SinglePostComponent implements OnInit {
     });
   }
 
-  getSinglePost(id: number) {
-    this.posts.getSinglePost(id).subscribe((response) => {
-      this.successMessage = '';
-    });
+  numberOfLikes: number = 0;
+  likeButtonClick() {
+    this.numberOfLikes++;
   }
 }

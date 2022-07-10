@@ -15,24 +15,23 @@ export class StaffCommentsService {
 
   getComments(id: number): Observable<any> {
     return this.http.get(
-      environment.apiUrl + '/staff/post/' + { id } + '/comment/'
+      'https://moti-vate.herokuapp.com/staff/post/' + id + '/comment/'
     );
   }
 
   postComments(
-    id: string,
-    userId: string,
-    postId: string,
-    comments: string,
+    id: number,
+   
+    post_id: number,
+    comment: string,
     
   ) {
     return this.http.post(
-      environment.apiUrl + '/staff/post/' + { id } + '/comment/',
+      'https://moti-vate.herokuapp.com/staff/post/' + 4 + '/comment/',
       {
         id,
-        userId,
-        postId,
-        comments,
+        post_id,
+        comment,
       }
     );
   }

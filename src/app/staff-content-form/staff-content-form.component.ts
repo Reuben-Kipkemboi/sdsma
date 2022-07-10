@@ -1,5 +1,5 @@
 import { AccountService } from './../_services/account.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CategoryService } from '../_services/category.service';
 import { Router } from '@angular/router';
@@ -17,13 +17,15 @@ export class StaffContentFormComponent implements OnInit {
     private post: PostsService,
     private router: Router
   ) {}
-
+@Input()
   categories: any = [];
   errorMessages: any;
   successMessage: any;
   error = false;
   loading = false;
   userId: any;
+  content_image:any;
+  PhotoFilePath:any;
   // selectedFile: any;
 
   ngOnInit(): void {
@@ -62,6 +64,20 @@ export class StaffContentFormComponent implements OnInit {
         form.reset();
         this.router.navigate(['/staff-page']);
       });
+  }
+
+  uploadImage(event:any){
+    var file =event.target.files[0];
+    const formData:FormData = new FormData();
+    formData.append('uploadedFile',file,file.name);
+
+    this.post.uploadPhoto(formData).subscribe((data:any)=>{
+      this.content_image=data.tostring()
+      this.PhotoFilePath=this.post.PhotoUrl+this.content_image
+
+    }
+
+    )
   }
 
   getCategory() {

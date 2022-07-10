@@ -1,7 +1,7 @@
 
 export class Comment {
-    id!:string;
-  postid!: string;
+  id!:number;
+  post_id!: number;
   comment!:string;
-  userid!:string
+  user_id!:number
 }

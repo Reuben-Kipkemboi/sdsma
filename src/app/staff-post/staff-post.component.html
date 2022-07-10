@@ -22,7 +22,8 @@
           </a>
         </div>
         <br />
-        <div class="card" style="width: 100%" *ngFor="let post of postArr">
+
+        <div class="card mb-4" style="width: 100%" *ngFor="let post of postArr">
           <img
             src="{{post.content_image}}"
             class="card-img-top"
@@ -34,11 +35,11 @@
             <p class="card-text">{{post.description}} </p>
           </div>
           <div class="small d-flex justify-content-center mx-4">
-            <a  routerLink="/single-post/{{post.id}}"  class="d-flex align-items-center btn btn-sm me-3">
+            <a  routerLink="/single-post/{{post.id}}"  class="d-flex align-items-center btn btn-sm btn-primary me-3">
              
               <p class="mb-0">View details</p>
             </a>
-            <a href="#!" class="d-flex align-items-center  btn btn-sm me-3">
+            <!-- <a href="#!" class="d-flex align-items-center  btn btn-sm me-3">
               <i class="far fa-thumbs-up me-2"></i>
               <p class="mb-0">Like</p>
             </a>
@@ -57,7 +58,7 @@
             <a (click)="deletePost(post.id)"  class="d-flex align-items-center btn btn-sm me-3">
               <i class="far fa-trash-alt me-2"></i>
               <p class="mb-0">Delete</p>
-            </a>
+            </a> -->
           </div>
         </div>
       </div>

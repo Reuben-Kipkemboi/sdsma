@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class PostsService {
   apiUrl = environment.apiUrl;
+  PhotoUrl = 'https://moti-vate.herokuapp.com/staff/post/';
 
   constructor(private http: HttpClient) {}
 
@@ -34,7 +35,11 @@ export class PostsService {
       category,
     });
   }
-  
+
+  uploadPhoto(formData:any) {
+    return this.http.post('https://moti-vate.herokuapp.com/staff/post/', formData);
+  }
+
   updatePosts(
     id: number,
     content_name: string,
@@ -53,18 +58,14 @@ export class PostsService {
   }
 
   getSinglePost(id: number) {
-    return this.http.get('https://moti-vate.herokuapp.com/staff/post/' + id)
-    
+    return this.http.get('https://moti-vate.herokuapp.com/staff/post/' + id);
   }
 
   deletePost(id: number) {
     return this.http.delete('https://moti-vate.herokuapp.com/staff/post/' + id);
   }
 
-  likePosts(val: any) {
-    return this.http.post(this.apiUrl + '/staff/post/', val);
-  }
-  sharePosts(val: any) {
-    return this.http.post(this.apiUrl + '/staff/post/', val);
+  likePosts(id: number) {
+    return this.http.post(this.apiUrl + '/staff/post/', id);
   }
 }

@@ -1,3 +1,4 @@
+import { StaffNavbarComponent } from './staff-navbar/staff-navbar.component';
 import { StaffCommentsComponent } from './staff-comments/staff-comments.component';
 import { EditStaffPostComponent } from './edit-staff-post/edit-staff-post.component';
 import { NgModule, Component } from '@angular/core';
@@ -60,4 +61,6 @@ export const routingComponents=[StaffProfileComponent,
   CategoryFormComponent,
   FooterComponent,
   EditStaffprofileComponent,
-  EditStaffPostComponent]
+  EditStaffPostComponent,
+  StaffNavbarComponent,
+StaffCommentsComponent]
