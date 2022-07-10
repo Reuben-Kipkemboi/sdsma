@@ -52,8 +52,11 @@ export class EditStaffPostComponent implements OnInit {
         
       )
       .subscribe((response) => {
-        this.successMessage = 'post updated successfully';
         form.reset();
+        this.successMessage = 'post updated successfully';
+        this.router.navigate(['/staff-page']);
+        
+        
       });
   }
   getCategory() {

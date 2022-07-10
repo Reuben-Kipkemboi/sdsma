@@ -41,6 +41,8 @@ import { StdSuggestionComponent } from './student/panel/std-suggestion/std-sugge
 
 import { ErrorInterceptor, JwtInterceptor } from './_helpers';
 import { EditStaffPostComponent } from './edit-staff-post/edit-staff-post.component';
+import { StaffCommentsComponent } from './staff-comments/staff-comments.component';
+import { StaffNavbarComponent } from './staff-navbar/staff-navbar.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +77,8 @@ import { EditStaffPostComponent } from './edit-staff-post/edit-staff-post.compon
     FooterComponent,
     EditStaffprofileComponent,
     EditStaffPostComponent,
+    StaffCommentsComponent,
+    StaffNavbarComponent,
   ],
   imports: [
     BrowserModule,
