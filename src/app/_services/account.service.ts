@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { environment } from '../../environments/environment';
 import { User } from '../_models';
-// import {observable} from 'rxjs'
+import {observable} from 'rxjs'
 
 @Injectable({
   providedIn: 'root',
@@ -45,8 +45,12 @@ export class AccountService {
 
   register(user: User) {
     // "https://moti-vate.herokuapp.com/signup/staff/
-    // 
+
     return this.http.post("https://moti-vate.herokuapp.com/signup/staff/", user);
+  }
+  student_register(user: User) {
+    // "https://moti-vate.herokuapp.com/signup/staff/
+    return this.http.post(`${environment.apiUrl}/api/signup/student/`, user);
   }
 
   getAll() {

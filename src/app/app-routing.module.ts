@@ -19,10 +19,12 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { HeropageComponent } from './heropage/heropage.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FooterComponent } from './footer/footer.component';
+import { StudentRegisterComponent } from './student-register/student-register.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'student_register', component: StudentRegisterComponent },
   {
     path: 'student',
     component: StudentComponent,
