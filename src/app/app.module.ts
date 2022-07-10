@@ -22,7 +22,7 @@ import { ContentComponent } from './homepage/content/content.component';
 import { HeronavbarComponent } from './heropage/heronavbar/heronavbar.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ReportsComponent } from './admin/reports/reports.component';
-
+import { UsersComponent } from './admin/users/users.component';
 import { SinglePostComponent } from './single-post/single-post.component';
 import { StaffProfileComponent } from './staff-profile/staff-profile.component';
 import { StaffPageComponent } from './staff-page/staff-page.component';
@@ -38,11 +38,10 @@ import { StdPostComponent } from './student/std-post/std-post.component';
 import { PanelComponent } from './student/panel/panel.component';
 import { CategoriesComponent } from './student/panel/categories/categories.component';
 import { StdSuggestionComponent } from './student/panel/std-suggestion/std-suggestion.component';
+import { StdNavComponent } from './student/std-nav/std-nav.component';
+import { EditStaffPostComponent } from './edit-staff-post/edit-staff-post.component';
 
 import { ErrorInterceptor, JwtInterceptor } from './_helpers';
-import { EditStaffPostComponent } from './edit-staff-post/edit-staff-post.component';
-import { StaffCommentsComponent } from './staff-comments/staff-comments.component';
-import { StaffNavbarComponent } from './staff-navbar/staff-navbar.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +66,7 @@ import { StaffNavbarComponent } from './staff-navbar/staff-navbar.component';
     EditprofileComponent,
     ReportsComponent,
     AdmincontentComponent,
+    UsersComponent,
     SinglePostComponent,
     StaffProfileComponent,
     StaffPageComponent,
@@ -77,8 +77,7 @@ import { StaffNavbarComponent } from './staff-navbar/staff-navbar.component';
     FooterComponent,
     EditStaffprofileComponent,
     EditStaffPostComponent,
-    StaffCommentsComponent,
-    StaffNavbarComponent,
+    StdNavComponent,
   ],
   imports: [
     BrowserModule,
