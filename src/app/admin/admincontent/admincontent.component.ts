@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminpostService } from '../../services/adminpost.service'
 import { PostsService } from '../../services/posts.service'
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-admincontent',
@@ -11,6 +12,7 @@ export class AdmincontentComponent implements OnInit {
   // adminpostArr:any=[];
   postArr: any = [];
   id='';
+  successMessage: any;
 
   ngOnInit(){
     // this.getAdmin_post(this.id);
@@ -19,7 +21,9 @@ export class AdmincontentComponent implements OnInit {
 
   constructor(
     private adminpostService: AdminpostService,
-    private postsService: PostsService
+    private postsService: PostsService,
+    private route: ActivatedRoute,
+    private router: Router,
   ) { }
 
   // getAdmin_post(id: string){
@@ -36,7 +40,8 @@ export class AdmincontentComponent implements OnInit {
 
   deleteAdmin_post(id: number) {
     this.adminpostService.deleteAdmin_post(id).subscribe((response) => {
-
+      this.successMessage = 'Post removed';
+      this.router.navigate(['/admin']);
     });
   }
 }

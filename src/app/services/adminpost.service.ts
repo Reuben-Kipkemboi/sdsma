@@ -15,11 +15,12 @@ export class AdminpostService {
   }
   // get all adminposts
   getAdmin_post(id:number): Observable<any> {
-    return this.http.get(environment.apiUrl + `/admin/post/${id}/`);
+    return this.http.get(environment.apiUrl + `/main/post/${id}/`);
   }
 
   // delete post
   deleteAdmin_post(id: number) {
-    return this.http.delete(environment.apiUrl + `/admin/post/${id}/`);
+    return this.http.delete('https://moti-vate.herokuapp.com/main/post/'+id);
+    // return this.http.delete(environment.apiUrl + `/main/post/${id}/`);
   }
 }

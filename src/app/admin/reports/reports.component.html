@@ -2,42 +2,10 @@
 <div class="progressBar">
   <p>Reports</p>
   <div>
-    <!-- <ng-template [ngIf]="show">
-      <ul *ngFor="let report of admin_reportlist">
-        <li>{{report.type}}</li>
+
+      <ul *ngFor="let report of admin_reportlist;let i = index;">
+        <li >{{report.type}}</li>
 
       </ul>
-    </ng-template> -->
-    <!-- <ng-container *ngFor="let report of admin_reportlist" >
-      <ul *ngshow="report.type">
-        <li>{{report.type}}</li>
-      </ul>
-   </ng-container> -->
-   <!-- <ul>
-    <li *ngFor="let report of admin_reportlist|slice0:5>{{report.type}}
-    </li>
-
-  </ul>
-  <ul *ngFor="let report of admin_reportlist;let i = index;">
-    <li *ngIf="i < 3">
-      {{report.type}}
-    </li>
-</ul> -->
-
-
-<div class="motivation">Motivation
-
-<mat-progress-bar style="height: 20px;
-" [mode]="'determinate'"
-[value]="value"
-></mat-progress-bar>
-</div>
-<div>
-
-</div>
-</div>
-
-
-
-
-
+    </div>
+    
