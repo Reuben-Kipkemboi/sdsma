@@ -43,8 +43,8 @@ export class PostsService {
   updatePosts(
     id: number,
     content_name: string,
-    content_image: string,
-    video: string,
+    content_image: File,
+    video: File,
     description: string,
     category: string
   ) {
@@ -66,6 +66,7 @@ export class PostsService {
   }
 
   likePosts(id: number) {
-    return this.http.post(this.apiUrl + '/staff/post/', id);
+    return this.http.post('https://moti-vate.herokuapp.com/posts/' + id + '/like/',id );
   }
 }
+

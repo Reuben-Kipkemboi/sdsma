@@ -27,7 +27,7 @@ export class StaffCommentsService {
     
   ) {
     return this.http.post(
-      'https://moti-vate.herokuapp.com/staff/post/' + 4 + '/comment/',
+      'https://moti-vate.herokuapp.com/staff/post/' + 2 + '/comment/',
       {
         id,
         post_id,

@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { CategoryService } from '../_services/category.service';
 import { Router } from '@angular/router';
 import { PostsService } from '../_services/posts.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-staff-content-form',
@@ -11,21 +12,27 @@ import { PostsService } from '../_services/posts.service';
   styleUrls: ['./staff-content-form.component.css'],
 })
 export class StaffContentFormComponent implements OnInit {
+  content_name!: string;
+  content_image!: File;
+  category!: string;
+  description!: string;
   constructor(
+    private http: HttpClient,
     private categoryService: CategoryService,
     private account: AccountService,
     private post: PostsService,
     private router: Router
   ) {}
-@Input()
+
   categories: any = [];
-  errorMessages: any;
-  successMessage: any;
+  // errorMessages: any;
+  // successMessage: any;
   error = false;
   loading = false;
-  userId: any;
-  content_image:any;
-  PhotoFilePath:any;
+  // userId: any;
+  // content_image: any;
+  PhotoFilePath: any;
+  // content_name: any;
   // selectedFile: any;
 
   ngOnInit(): void {
@@ -66,18 +73,40 @@ export class StaffContentFormComponent implements OnInit {
       });
   }
 
-  uploadImage(event:any){
-    var file =event.target.files[0];
-    const formData:FormData = new FormData();
-    formData.append('uploadedFile',file,file.name);
+  uploadImage(event: any) {
+    var file = event.target.files[0];
+    const formData: FormData = new FormData();
+    formData.append('uploadedFile', file, file.name);
 
-    this.post.uploadPhoto(formData).subscribe((data:any)=>{
-      this.content_image=data.tostring()
-      this.PhotoFilePath=this.post.PhotoUrl+this.content_image
+    this.post.uploadPhoto(formData).subscribe((data: any) => {
+      this.content_image = data.tostring();
+      this.PhotoFilePath = this.post.PhotoUrl + this.content_image;
+    });
+  }
 
-    }
+  onImageChanged(event: any) {
+    this.content_image = event.target.file[0];
+  }
 
-    )
+  onTitleChanged(event: any) {
+    this.content_name = event.target.value;
+  }
+  onDescriptionChanged(event:any){
+    this.description = event.target.value;
+  }
+
+  newPost() {
+    const uploadData = new FormData();
+    uploadData.append('content_name', this.content_name);
+    uploadData.append('content_image', this.content_image);
+    uploadData.append('description', this.content_name);
+    uploadData.append('category', this.category);
+    this.http
+      .post('https://moti-vate.herokuapp.com/staff/post/', uploadData)
+      .subscribe
+      // (data: any) => console.log(data),
+      // (error: any) => console.log(error)
+      ();
   }
 
   getCategory() {
