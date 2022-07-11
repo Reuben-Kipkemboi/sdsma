@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://moti-vate.herokuapp.com',
+  // apiUrl:'https://moti-vate.herokuapp.com'
+  // https://software-dev-motivation.herokuapp.com/
+  apiUrl:'https://software-dev-motivation.herokuapp.com'
+  
 };
 
 /*
