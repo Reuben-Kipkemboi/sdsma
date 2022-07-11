@@ -1,6 +1,8 @@
+import { AccountService } from './../_services/account.service';
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../_services/posts.service';
 import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -10,11 +12,19 @@ import { Router } from '@angular/router';
 })
 export class StaffPostComponent implements OnInit {
   postArr: any = [];
+
   ngOnInit() {
     this.getPosts();
   }
 
-  constructor(private router: Router, private postsService: PostsService) {}
+  constructor(
+    private router: Router,
+    private postsService: PostsService,
+    accountService: AccountService
+  ) {}
+
+  successMessage: any;
+  userId: any;
 
   getPosts() {
     this.postsService.getPosts().subscribe((data) => {
@@ -22,8 +32,16 @@ export class StaffPostComponent implements OnInit {
     });
   }
 
-  
+  deletePost(id: number) {
+    this.postsService.deletePost(id).subscribe((response) => {
+      this.successMessage = 'Job removed';
+    });
+  }
 
-  
+  getSinglePost(id: number) {
+    this.postsService.getSinglePost(id).subscribe((response) => {
+      this.successMessage = '';
+    });
+  }
 }
 

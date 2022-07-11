@@ -1,5 +1,7 @@
+import { StaffNavbarComponent } from './staff-navbar/staff-navbar.component';
+import { StaffCommentsComponent } from './staff-comments/staff-comments.component';
 import { EditStaffPostComponent } from './edit-staff-post/edit-staff-post.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from './authentication/login/login.component';
@@ -38,13 +40,13 @@ const routes: Routes = [
   { path: 'student-page', component: StudentComponent },
   { path: 'profile', component: StaffProfileComponent },
   { path: 'staff-page', component: StaffPageComponent },
-  { path: 'single-post', component: SinglePostComponent },
+  { path: 'single-post/:id', component: SinglePostComponent },
   { path: 'category', component: CategoryComponent },
   { path: 'staff-content-form', component: StaffContentFormComponent },
   { path: 'category-form', component: CategoryFormComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'edit-staff-post/:id', component: EditStaffPostComponent },
-  
+  { path: 'staff-comments/:id',component :StaffCommentsComponent},
 ];
 
 @NgModule({
@@ -59,4 +61,6 @@ export const routingComponents=[StaffProfileComponent,
   CategoryFormComponent,
   FooterComponent,
   EditStaffprofileComponent,
-  EditStaffPostComponent]
+  EditStaffPostComponent,
+  StaffNavbarComponent,
+StaffCommentsComponent]

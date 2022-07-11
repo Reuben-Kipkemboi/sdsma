@@ -38,17 +38,17 @@
             ></textarea>
 
             <br />
+            <div class="form-group">
+          
+              <select name="category" id="category" class="form-select" aria-label="Default select example" required
+                ngModel #category="ngModel">
+                <option value selected disabled>--Select Category--</option>
+                <option *ngFor="let category of categories" value="{{category.id}}">{{category.type}}</option>
+              </select>
+            </div>
 
           
-            <select  type="select" id="category" class="form-select mb-4 " name="category">
-              <option value selected disabled>--Choose a Category--</option>
-      
-              <option *ngFor="let category of categories" [ngValue]="category" value="{{post?.id}}">
-                {{ category.type }}
-              </option>
-              
-              </select
-            ><br />
+       
 
             
             <!-- <label class="custom-file-label" for="customFile"></label>
