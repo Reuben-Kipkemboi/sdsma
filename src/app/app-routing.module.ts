@@ -32,7 +32,7 @@ const routes: Routes = [
     ]
   },
   { path: 'admin', component: AdminComponent },
-  { path: 'homepage', component: HomepageComponent },
+  { path: '', component: HomepageComponent },
   { path: 'heropage', component: HeropageComponent },
   { path: 'editprofile', component: EditprofileComponent },
   { path: 'student-page', component: StudentComponent },
