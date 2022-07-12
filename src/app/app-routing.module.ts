@@ -21,6 +21,7 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { HeropageComponent } from './heropage/heropage.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FooterComponent } from './footer/footer.component';
+import { PostdetailsComponent } from './postdetails/postdetails.component';
 import { StudentRegisterComponent } from './student-register/student-register.component';
 
 
@@ -48,10 +49,17 @@ const routes: Routes = [
   { path: 'staff-content-form', component: StaffContentFormComponent },
   { path: 'category-form', component: CategoryFormComponent },
   { path: 'footer', component: FooterComponent },
+
+  { path: 'edit-staffprofile', component:EditStaffprofileComponent},
+  { path: 'post-details/:id', component:PostdetailsComponent}
+
+
   { path: 'edit-staff-post/:id', component: EditStaffPostComponent },
   { path: 'staff-comments/:id', component: StaffCommentsComponent },
   { path: 'staff-profile/:id', component: StaffCommentsComponent },
   { path: 'edit-staffprofile/:id',component:EditStaffprofileComponent}
+  { path: 'staff-comments/:id',component :StaffCommentsComponent},
+
 ];
 
 @NgModule({
@@ -59,6 +67,7 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule { }
+
 export const routingComponents=[StaffProfileComponent,
   StaffPageComponent,
   CategoryComponent,
@@ -71,3 +80,5 @@ export const routingComponents=[StaffProfileComponent,
 StaffCommentsComponent,
 StaffProfileComponent,
 EditStaffprofileComponent]
+StaffCommentsComponent]
+

@@ -37,7 +37,10 @@ export class StaffContentFormComponent implements OnInit {
   image_name!:string;
 
   ngOnInit(): void {
+
+
     this.getCategory();
+
   }
 
   // processFile(imageInput: any) {
@@ -102,6 +105,19 @@ export class StaffContentFormComponent implements OnInit {
 
   onTitleChanged(event: any) {
     this.content_name = event.target.value;
+    )
+
+      .subscribe(
+        (response) => {
+          form.reset();
+          this.router.navigate(['/staff-page']);
+        })
+
+
+  }
+
+
+
   }
   onDescriptionChanged(event:any){
     this.description = event.target.value;
@@ -125,6 +141,6 @@ export class StaffContentFormComponent implements OnInit {
     this.categoryService.getCategory().subscribe((data) => {
       this.categories = data;
     });
-  }
+
 }
 

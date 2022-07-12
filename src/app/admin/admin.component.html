@@ -1,5 +1,6 @@
 
-<div class="container-fluid pt-4">
+<div class="container-fluid pt-4 mt-5">
+  <app-heronavbar></app-heronavbar>
 <mat-grid-list cols="6" rowHeight="100px" [gutterSize]="'10px'">
 
   <mat-grid-tile rowspan="6" style=" background-image: linear-gradient(to top, #5270FC 85%, white );">
@@ -37,12 +38,15 @@
 
   <mat-grid-tile rowspan="3" colspan="3" style="background-color: #D9D9D9" >
     <app-reports></app-reports>
+
   </mat-grid-tile>
 
   <mat-grid-tile rowspan="1" colspan="1" >
     <div id="comments" class="admin-sector" style="width:140px; height:100px; margin-left: 23px;">
       <div>
+
         Comments
+        {{commentlist.length}}
       </div>
     </div>
   </mat-grid-tile>
@@ -50,6 +54,7 @@
     <div id="likes" class="admin-sector">
       <div>
         Likes
+        {{likeslist.length}}
       </div>
     </div>
   </mat-grid-tile>
@@ -72,11 +77,18 @@
   </mat-grid-tile>
   <mat-grid-tile rowspan="3" colspan="3" style="background-color: #D9D9D9" ><app-admincontent></app-admincontent>
   </mat-grid-tile>
-  <mat-grid-tile rowspan="2" colspan="2" style="background-color: #D9D9D9">
-    10
+
+  <mat-grid-tile rowspan="2" colspan="2" style="background-color:white">
+    <div class="user_display" >
+      <ul *ngFor="let user of userslist;let i = index;"> <li style="background-color:#D9D9D9; width:20rem;
+        " *ngIf="i < 4">{{ user.username }}</li>
+      </ul>
+      </div>
+
   </mat-grid-tile>
 
 </mat-grid-list>
 
 
 </div>
+
