@@ -12,29 +12,15 @@ export class StudentPostService {
   constructor(private http: HttpClient) {}
 
   getPosts(): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/student/post/`);
+    return this.http.get(`${this.apiUrl}/student/post/`);
   }
 
   getpost(id: number) {
-    return this.http.get(`${environment.apiUrl}/student/post/${id}`);
+    return this.http.get(`${this.apiUrl}/student/post/${id}`);
   }
 
-  createPost(
-    id: number,
-    content_name: string,
-    content_image: string,
-    video: string,
-    description: string,
-    category: string
-  ) {
-    return this.http.post(`${environment.apiUrl}/student/post/`, {
-      id,
-      content_name,
-      content_image,
-      video,
-      description,
-      category,
-    });
+  createPost(formData: any) {
+    return this.http.post(`${this.apiUrl}/student/post/`, formData);
   }
 
   updatePosts(
@@ -45,7 +31,7 @@ export class StudentPostService {
     description: string,
     category: string
   ) {
-    return this.http.put(`${environment.apiUrl}/student/post/${id}`, {
+    return this.http.put(`${this.apiUrl}/student/post/${id}`, {
       content_name,
       content_image,
       video,
@@ -65,7 +51,7 @@ export class StudentPostService {
     bio: string,
     email: string
   ) {
-    return this.http.put(`${environment.apiUrl}/student/update_profile`, {
+    return this.http.put(`${this.apiUrl}/student/update_profile`, {
       username,
       password,
       first_name,
@@ -78,22 +64,22 @@ export class StudentPostService {
   }
 
   comment(id: number) {
-    return this.http.get(`${environment.apiUrl}/student/post/${id}/comment`);
+    return this.http.get(`${this.apiUrl}/student/post/${id}/comment`);
   }
 
   likePost(id: number) {
-    return this.http.get(`${environment.apiUrl}/student/post/${id}/like`);
+    return this.http.get(`${this.apiUrl}/student/post/${id}/like`);
   }
 
   deletePost(id: number) {
-    return this.http.get(`${environment.apiUrl}/student/post/${id}`);
+    return this.http.get(`${this.apiUrl}/student/post/${id}`);
   }
 
   // wish(id: number) {
-  //   return this.http.get(`${environment.apiUrl}/student/${id}/wishlist`);
+  //   return this.http.get(`${this.apiUrl}/student/${id}/wishlist`);
   // }
 
   wishlist(id: number) {
-    return this.http.get(`${environment.apiUrl}/student/wishlist/${id}`);
+    return this.http.get(`${this.apiUrl}/student/wishlist/${id}`);
   }
 }
