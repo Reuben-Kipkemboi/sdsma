@@ -7,12 +7,14 @@ import { environment } from '../../environments/environment';
 import { User } from '../_models';
 import {observable} from 'rxjs'
 
+
 @Injectable({
   providedIn: 'root',
 })
 export class AccountService {
   private userSubject: BehaviorSubject<User>;
   public user: Observable<User>;
+  urlProfile = "http://127.0.0.1:8000/api/profile/<username>"
 
   constructor(private router: Router, private http: HttpClient) {
     this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')!));
@@ -24,7 +26,8 @@ export class AccountService {
   }
   login(username: string, password: string) {
     return this.http
-      .post<User>(`${environment.apiUrl}/api/login/`, {
+      // .post<User>(`${environment.apiUrl}/api/login/`, {
+        .post<User>("http://127.0.0.1:8000/api/login/", {
         username,
         password,
       }).pipe(map((user) => {
@@ -46,13 +49,18 @@ export class AccountService {
   register(user: User) {
     // "https://moti-vate.herokuapp.com/signup/staff/
 
-    return this.http.post("https://moti-vate.herokuapp.com/signup/staff/", user);
+    // return this.http.post("https://moti-vate.herokuapp.com/signup/staff/", user);
+    return this.http.post("http://127.0.0.1:8000/signup/", user);
   }
   student_register(user: User) {
     // "https://moti-vate.herokuapp.com/signup/staff/
     return this.http.post(`${environment.apiUrl}/api/signup/student/`, user);
   }
 
+  getUser():Observable<any>{ 
+    return this.http.get<any>(this.urlProfile)
+
+  }
   getAll() {
     return this.http.get<User[]>(`${environment.apiUrl}/all_users`);
   }
@@ -90,3 +98,6 @@ export class AccountService {
     );
   }
 }
+
+
+
