@@ -29,7 +29,10 @@ export class StaffContentFormComponent implements OnInit {
   // selectedFile: any;
 
   ngOnInit(): void {
+
+
     this.getCategory();
+
   }
 
   // processFile(imageInput: any) {
@@ -78,12 +81,23 @@ export class StaffContentFormComponent implements OnInit {
     }
 
     )
+
+      .subscribe(
+        (response) => {
+          form.reset();
+          this.router.navigate(['/staff-page']);
+        })
+
+
+  }
+
+
   }
 
   getCategory() {
     this.categoryService.getCategory().subscribe((data) => {
       this.categories = data;
     });
-  }
+
 }
 
