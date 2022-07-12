@@ -18,14 +18,13 @@ export class StaffPostComponent implements OnInit {
   }
 
 
-  constructor(private router: Router,
-    private postsService: PostsService) {}
+  
 
-  constructor(
-    private router: Router,
-    private postsService: PostsService,
-    accountService: AccountService
-  ) {}
+    constructor(
+      private router: Router,
+      private postsService: PostsService,
+      accountService: AccountService
+    ) {}
 
   successMessage: any;
 

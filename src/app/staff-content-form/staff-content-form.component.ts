@@ -89,7 +89,7 @@ export class StaffContentFormComponent implements OnInit {
 //     const formData: FormData = new FormData();
 //     console.log(formData);
 //     // formData.append('uploadedFile', file, file.name);
-    
+
 // console.log(formData);
     // this.post.uploadPhoto(event).subscribe((data: any) => {
     //   console.log(data)
@@ -103,22 +103,22 @@ export class StaffContentFormComponent implements OnInit {
     this.content_image = event.target.file[0];
   }
 
-  onTitleChanged(event: any) {
-    this.content_name = event.target.value;
-    )
-
-      .subscribe(
-        (response) => {
-          form.reset();
-          this.router.navigate(['/staff-page']);
-        })
+  // onTitleChanged(event: any) {
+  //   this.content_name = event.target.value;
 
 
-  }
+  //     .subscribe(
+  //       (response) => {
+  //         form.reset();
+  //         this.router.navigate(['/staff-page']);
+  //       })
+
+
+  // }
 
 
 
-  }
+
   onDescriptionChanged(event:any){
     this.description = event.target.value;
   }
@@ -142,5 +142,5 @@ export class StaffContentFormComponent implements OnInit {
       this.categories = data;
     });
 
-}
+}}
 
