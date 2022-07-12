@@ -27,16 +27,14 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'student_register', component: StudentRegisterComponent },
-  {
-    path: 'student',
-    component: StudentComponent,
+  { path: 'student', component: StudentComponent,
     children: [
       { path: 'profile/edit', component: StdProfileComponent },
       { path: 'add/post', component: StdPostFormComponent },
     ],
   },
   { path: 'admin', component: AdminComponent },
-  { path: 'homepage', component: HomepageComponent },
+  { path: '', component: HomepageComponent },
   { path: 'heropage', component: HeropageComponent },
   { path: 'editprofile', component: EditprofileComponent },
   { path: 'student-page', component: StudentComponent },
@@ -65,4 +63,5 @@ export const routingComponents=[StaffProfileComponent,
   EditStaffprofileComponent,
   EditStaffPostComponent,
   StaffNavbarComponent,
-StaffCommentsComponent]
+  StaffCommentsComponent
+]
