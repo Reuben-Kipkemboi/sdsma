@@ -55,6 +55,9 @@ const routes: Routes = [
 
 
   { path: 'edit-staff-post/:id', component: EditStaffPostComponent },
+  { path: 'staff-comments/:id', component: StaffCommentsComponent },
+  { path: 'staff-profile/:id', component: StaffCommentsComponent },
+  { path: 'edit-staffprofile/:id',component:EditStaffprofileComponent}
   { path: 'staff-comments/:id',component :StaffCommentsComponent},
 
 ];
@@ -74,5 +77,8 @@ export const routingComponents=[StaffProfileComponent,
   EditStaffprofileComponent,
   EditStaffPostComponent,
   StaffNavbarComponent,
+StaffCommentsComponent,
+StaffProfileComponent,
+EditStaffprofileComponent]
 StaffCommentsComponent]
 

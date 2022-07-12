@@ -19,6 +19,7 @@ export class SinglePostComponent implements OnInit {
   userId: any;
   post: any;
   postId: any;
+  category:any;
 
   ngOnInit(): void {
     let paramSub = this.route.params.subscribe((params) => {
@@ -47,5 +48,12 @@ export class SinglePostComponent implements OnInit {
   numberOfLikes: number = 0;
   likeButtonClick() {
     this.numberOfLikes++;
+  }
+
+  likePosts(id: number) {
+    this.posts.likePosts(id).subscribe((response) => {
+      this.numberOfLikes++;
+      this.router.navigate(['/staff-page']);
+    });
   }
 }

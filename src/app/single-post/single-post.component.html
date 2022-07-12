@@ -5,7 +5,7 @@
     <div class="card-fluid" style="max-width: fit-content; margin-left: 200px">
       <div class="row">
         <div class="">
-          <p class="mt-4">June 29,2022/#Fullstack</p>
+          <p class="mt-4"> {{post.date_posted|date}} </p> 
           <br />
           <h2 class="text-center" >
 
@@ -22,24 +22,26 @@
 
   <div class="col-md-4" style="margin-left: 200px">
     <img
-      src="{{post.content_image}}"
+      src=""
       alt="profile-pic"
       class="img rounded-circle"
       style="width: 100px"
     />
     Jane doe
   </div>
-{{post.id}}
+
   <div>
     <div class="card single-post" style="width:80%;">
       <img
-        src=""
+        src="{{post.content_image}}"
+        class="card-img-top"
+
+       
 
         alt="Sunset Over the Sea"
         
 
-        alt=""
-        style =""
+
 
       />
       <div class="card-body">
