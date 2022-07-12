@@ -5,7 +5,7 @@
       <div class="card" style="margin-left: 40px">
         <div>
           <form
-            (ngSubmit)="createPosts(f,image.value,$event)"
+            (ngSubmit)="createPosts(f)"
             #f="ngForm"
             class="border border-primary staff-content-form p-5 text-center" type="multipart/form-data"
           >
@@ -44,7 +44,7 @@
               </select>
             </div>
             
-            <label class="custom-file-label" for="customFile"></label>
+            <!-- <label class="custom-file-label" for="customFile"></label>
            <img [src]= PhotoFilePath > 
             <input
               type="file"
@@ -52,7 +52,7 @@
              #image
               name="content_image"
               (change)="uploadImage($event)"
-            />
+            /> -->
 
             <!-- <select  type="select"  class="form-select"    name="" id="" >
             <option value selected disabled>--Select file--</option>

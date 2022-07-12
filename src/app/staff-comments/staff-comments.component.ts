@@ -13,6 +13,7 @@ import { HttpClient } from '@angular/common/http';
 export class StaffCommentsComponent implements OnInit {
   commentsArr: any = [];
   id: any;
+ 
 
   
 
@@ -29,7 +30,7 @@ export class StaffCommentsComponent implements OnInit {
     // this.staffcomments.postComments().subscribe((comment) => {
     //   this.comment = comment;
     // this.getComments(this.id);
-    // this.postComments(this.id)
+    // this.postComments(this.post_id)
   }
 
   successMessage: any;
