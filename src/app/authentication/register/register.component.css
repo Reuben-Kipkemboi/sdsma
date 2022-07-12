@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+*{
+    font-family: 'Roboto Slab', serif;
+}
+
 .bulb{
     background-image: url("src/assets/images/logo2.jpeg");
     background-size: contain;
     height: 90vh;
     background-repeat: no-repeat;
     background-position: center left bottom;
-    margin-top: 6rem;
+    /* margin-top: 6rem; */
+    margin-top:3%;
+    /* border-radius:100% 0% 100% 0% / 100% 100% 0% 0% ; */
 }
 .card-border{
     box-sizing: border-box;
