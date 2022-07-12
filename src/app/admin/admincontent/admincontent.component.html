@@ -1,18 +1,29 @@
-<p>admincontent works!</p>
-<ul *ngFor="let post of postArr">
-  <li>
+
+<div class="post_details">
+<h4>Content</h4>
+<ul *ngFor="let post of postArr,let i = index;">
+  <li *ngIf="i < 4">
     {{post.content_name}}
+
     <a routerLink="/post-details/{{post.id}}/" class="btn view-details">
-      View Details
+      View
     </a>
 
     <a (click)="deleteAdmin_post(post.id)" style="cursor: pointer;"><i class="fa fa-trash text-danger"></i></a>
-    
+
   </li>
 </ul>
 
+</div>
 
+<!-- <mat-grid-tile rowspan="2" colspan="2" style="background-color:white">
+  <div class="user_display" >
+    <ul *ngFor="let user of userslist;let i = index;"> <li style="background-color:#D9D9D9; width:20rem;
+      " *ngIf="i < 4">{{ user.username }}</li>
+    </ul>
+    </div>
 
+</mat-grid-tile> -->
 
 
 

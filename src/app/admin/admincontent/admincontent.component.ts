@@ -41,7 +41,8 @@ export class AdmincontentComponent implements OnInit {
   deleteAdmin_post(id: number) {
     this.adminpostService.deleteAdmin_post(id).subscribe((response) => {
       this.successMessage = 'Post removed';
-      this.router.navigate(['/admin']);
+      this.getPosts()
+      // this.router.navigate(['/admin']);
     });
   }
 }
