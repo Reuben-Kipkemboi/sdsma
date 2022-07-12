@@ -10,21 +10,46 @@ import { Observable } from 'rxjs';
 })
 export class PostsService {
   apiUrl = environment.apiUrl;
+  PhotoUrl = 'https://res.cloudinary.com/reuby/image/upload/v1/media/images_uploaded/';
 
   constructor(private http: HttpClient) {}
 
   getPosts(): Observable<any> {
-    return this.http.get(environment.apiUrl + '/staff/post/');
+    return this.http.get('https://moti-vate.herokuapp.com/staff/post/');
   }
 
   createPosts(
+    id: string,
     content_name: string,
-    content_image:string,
-    video:string,
-    description:string,
-    category:string,) 
-    {
-    return this.http.post(environment.apiUrl + '/staff/post/', {
+    content_image: string,
+    video: string,
+    description: string,
+    category: string
+  ) {
+    return this.http.post('https://moti-vate.herokuapp.com/staff/post/', {
+      id,
+      content_name,
+      content_image,
+      video,
+      description,
+      category,
+    });
+  }
+  
+
+  uploadPhoto(formData:any) {
+    return this.http.post('https://moti-vate.herokuapp.com/staff/post/', formData);
+  }
+
+  updatePosts(
+    id: number,
+    content_name: string,
+    content_image: File,
+    video: File,
+    description: string,
+    category: string
+  ) {
+    return this.http.put('https://moti-vate.herokuapp.com/staff/post/' + id, {
       content_name,
       content_image,
       video,
@@ -33,17 +58,16 @@ export class PostsService {
     });
   }
 
-  editPosts(val: any) {
-    return this.http.put(this.apiUrl + '/staff/post/', val);
-  }
-  likePosts(val: any) {
-    return this.http.post(this.apiUrl + '/staff/post/', val);
-  }
-  sharePosts(val: any) {
-    return this.http.post(this.apiUrl + '/staff/post/', val);
+  getSinglePost(id: number) {
+    return this.http.get('https://moti-vate.herokuapp.com/staff/post/' + id);
   }
 
-  deletePosts(id:number) {
-    return this.http.delete(this.apiUrl + '/post/'+ id);
+  deletePost(id: number) {
+    return this.http.delete('https://moti-vate.herokuapp.com/staff/post/' + id);
+  }
+
+  likePosts(id: number) {
+    return this.http.post('https://moti-vate.herokuapp.com/posts/' + id + '/like/',id );
   }
 }
+
