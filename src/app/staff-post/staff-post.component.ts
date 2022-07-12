@@ -17,6 +17,10 @@ export class StaffPostComponent implements OnInit {
     this.getPosts();
   }
 
+
+  constructor(private router: Router,
+    private postsService: PostsService) {}
+
   constructor(
     private router: Router,
     private postsService: PostsService,
@@ -24,7 +28,7 @@ export class StaffPostComponent implements OnInit {
   ) {}
 
   successMessage: any;
-  userId: any;
+
 
   getPosts() {
     this.postsService.getPosts().subscribe((data) => {

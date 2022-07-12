@@ -5,10 +5,14 @@
     <div class="card-fluid" style="max-width: fit-content; margin-left: 200px">
       <div class="row">
         <div class="">
-          <p class="mt-4">June 29,2022/#Fullstack</p>
+          <p class="mt-4"> {{post.date_posted|date}} </p> 
           <br />
           <h2 class="text-center" >
+
+            How to get inspired when your coding hits a dead end!
+
             {{post.content_name}}
+
           </h2>
         </div>
       </div>
@@ -18,21 +22,25 @@
 
   <div class="col-md-4" style="margin-left: 200px">
     <img
-      src="{{post.content_image}}"
+      src=""
       alt="profile-pic"
       class="img rounded-circle"
       style="width: 100px"
     />
     Jane doe
   </div>
-{{post.id}}
+
   <div>
     <div class="card single-post" style="width:80%;">
       <img
-        src=""
+        src="{{post.content_image}}"
         class="card-img-top"
-        alt=""
-        style =""
+
+       
+
+        alt="Sunset Over the Sea"
+
+
       />
       <div class="card-body">
         <p class="card-text">
@@ -79,6 +87,7 @@
           </div>
         </div>
       </form>
+      
     </div>
   </div>
 </div>

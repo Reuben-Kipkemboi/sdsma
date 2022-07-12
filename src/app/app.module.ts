@@ -1,5 +1,6 @@
 
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,7 +44,11 @@ import { StdNavComponent } from './student/std-nav/std-nav.component';
 import { EditStaffPostComponent } from './edit-staff-post/edit-staff-post.component';
 
 import { ErrorInterceptor, JwtInterceptor } from './_helpers';
+
+import { PostdetailsComponent } from './postdetails/postdetails.component';
+
 import { StudentRegisterComponent } from './student-register/student-register.component';
+
 
 @NgModule({
   declarations: [
@@ -78,10 +83,14 @@ import { StudentRegisterComponent } from './student-register/student-register.co
     StaffContentFormComponent,
     FooterComponent,
     EditStaffprofileComponent,
+
+    PostdetailsComponent,
+
     EditStaffPostComponent,
     StdNavComponent,
     StudentRegisterComponent,
     // StudentRegisterComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -102,6 +111,7 @@ import { StudentRegisterComponent } from './student-register/student-register.co
 
 
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }
