@@ -23,6 +23,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { FooterComponent } from './footer/footer.component';
 import { StudentRegisterComponent } from './student-register/student-register.component';
 
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -48,7 +49,9 @@ const routes: Routes = [
   { path: 'category-form', component: CategoryFormComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'edit-staff-post/:id', component: EditStaffPostComponent },
-  { path: 'staff-comments/:id',component :StaffCommentsComponent},
+  { path: 'staff-comments/:id', component: StaffCommentsComponent },
+  { path: 'staff-profile/:id', component: StaffCommentsComponent },
+  { path: 'edit-staffprofile/:id',component:EditStaffprofileComponent}
 ];
 
 @NgModule({
@@ -65,4 +68,6 @@ export const routingComponents=[StaffProfileComponent,
   EditStaffprofileComponent,
   EditStaffPostComponent,
   StaffNavbarComponent,
-StaffCommentsComponent]
+StaffCommentsComponent,
+StaffProfileComponent,
+EditStaffprofileComponent]

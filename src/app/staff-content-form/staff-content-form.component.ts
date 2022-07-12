@@ -34,6 +34,7 @@ export class StaffContentFormComponent implements OnInit {
   PhotoFilePath: any;
   // content_name: any;
   // selectedFile: any;
+  image_name!:string;
 
   ngOnInit(): void {
     this.getCategory();
@@ -55,9 +56,12 @@ export class StaffContentFormComponent implements OnInit {
   //   reader.readAsDataURL(file);
   // }
 
-  createPosts(form: NgForm) {
+  createPosts(form: NgForm,image:string,event:any) {
     let data = form.form.value;
-    this.loading = true;
+    console.log(event.target.files);
+    console.log(typeof(data))
+    data.content_image=this.image_name
+    console.log(data);
     this.post
       .createPosts(
         data.id,
@@ -74,14 +78,22 @@ export class StaffContentFormComponent implements OnInit {
   }
 
   uploadImage(event: any) {
+    console.log(event)
     var file = event.target.files[0];
-    const formData: FormData = new FormData();
-    formData.append('uploadedFile', file, file.name);
-
-    this.post.uploadPhoto(formData).subscribe((data: any) => {
-      this.content_image = data.tostring();
-      this.PhotoFilePath = this.post.PhotoUrl + this.content_image;
-    });
+    this.image_name=file.name
+//     this.ngform.get('content_image').setValue(file);
+//     console.log(file);
+//     const formData: FormData = new FormData();
+//     console.log(formData);
+//     // formData.append('uploadedFile', file, file.name);
+    
+// console.log(formData);
+    // this.post.uploadPhoto(event).subscribe((data: any) => {
+    //   console.log(data)
+    //   this.content_image = data.tostring();
+    //   this.PhotoFilePath = this.post.PhotoUrl + this.content_image;
+    //   console.log(this.PhotoFilePath);
+    // });
   }
 
   onImageChanged(event: any) {
@@ -95,19 +107,19 @@ export class StaffContentFormComponent implements OnInit {
     this.description = event.target.value;
   }
 
-  newPost() {
-    const uploadData = new FormData();
-    uploadData.append('content_name', this.content_name);
-    uploadData.append('content_image', this.content_image);
-    uploadData.append('description', this.content_name);
-    uploadData.append('category', this.category);
-    this.http
-      .post('https://moti-vate.herokuapp.com/staff/post/', uploadData)
-      .subscribe
-      // (data: any) => console.log(data),
-      // (error: any) => console.log(error)
-      ();
-  }
+  // newPost() {
+  //   const uploadData = new FormData();
+  //   uploadData.append('content_name', this.content_name);
+  //   uploadData.append('content_image', this.content_image);
+  //   uploadData.append('description', this.content_name);
+  //   uploadData.append('category', this.category);
+  //   this.http
+  //     .post('https://moti-vate.herokuapp.com/staff/post/', uploadData)
+  //     .subscribe
+  //     // (data: any) => console.log(data),
+  //     // (error: any) => console.log(error)
+  //     ();
+  // }
 
   getCategory() {
     this.categoryService.getCategory().subscribe((data) => {

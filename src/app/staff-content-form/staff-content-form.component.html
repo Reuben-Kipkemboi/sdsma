@@ -5,7 +5,7 @@
       <div class="card" style="margin-left: 40px">
         <div>
           <form
-            (ngSubmit)="createPosts(f)"
+            (ngSubmit)="createPosts(f,image.value,$event)"
             #f="ngForm"
             class="border border-primary staff-content-form p-5 text-center" type="multipart/form-data"
           >
@@ -49,7 +49,7 @@
             <input
               type="file"
               class="form-control"
-             
+             #image
               name="content_image"
               (change)="uploadImage($event)"
             />

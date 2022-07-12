@@ -10,12 +10,12 @@ import { Observable } from 'rxjs';
 })
 export class PostsService {
   apiUrl = environment.apiUrl;
-  PhotoUrl = 'https://moti-vate.herokuapp.com/staff/post/';
+  PhotoUrl = 'https://res.cloudinary.com/reuby/image/upload/v1/media/images_uploaded/';
 
   constructor(private http: HttpClient) {}
 
   getPosts(): Observable<any> {
-    return this.http.get(environment.apiUrl + '/staff/post/');
+    return this.http.get('https://moti-vate.herokuapp.com/staff/post/');
   }
 
   createPosts(
@@ -35,6 +35,7 @@ export class PostsService {
       category,
     });
   }
+  
 
   uploadPhoto(formData:any) {
     return this.http.post('https://moti-vate.herokuapp.com/staff/post/', formData);

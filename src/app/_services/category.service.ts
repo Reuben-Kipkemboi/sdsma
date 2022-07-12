@@ -12,7 +12,9 @@ export class CategoryService {
   constructor(private http: HttpClient) {}
 
   getCategory(): Observable<any> {
-    return this.http.get(environment.apiUrl + '/staff/create_categories/');
+    return this.http.get(
+      'https://moti-vate.herokuapp.com/staff/create_categories/'
+    );
   }
 
   createCategory(
@@ -20,7 +22,7 @@ export class CategoryService {
     type: string
   ) {
     return this.http.post(
-      environment.apiUrl + '/staff/create_categories/',
+      'https://moti-vate.herokuapp.com/staff/create_categories/',
       {
         id,
         type,
