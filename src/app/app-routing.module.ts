@@ -23,7 +23,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { FooterComponent } from './footer/footer.component';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
 import { StudentRegisterComponent } from './student-register/student-register.component';
-
+import { AdminCategoryComponent } from './admin-category/admin-category.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/homepage', pathMatch: 'full' },
@@ -58,6 +58,7 @@ const routes: Routes = [
   { path: 'staff-profile/:id', component: StaffCommentsComponent },
   { path: 'edit-staffprofile/:id',component:EditStaffprofileComponent},
   { path: 'staff-comments/:id',component :StaffCommentsComponent},
+  { path: 'admin-category', component: AdminCategoryComponent },
 ];
 
 @NgModule({
