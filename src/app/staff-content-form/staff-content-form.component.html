@@ -4,45 +4,56 @@
     <div class="col-md-6">
       <div class="card" style="margin-left: 40px">
         <div>
-          <form (ngSubmit)="createPosts(f)" #f="ngForm"class="border border-primary staff-content-form p-5 text-center">
-            <p class="h4 mb-4 ">Create post</p>
+          <form
+            (ngSubmit)="createPosts(f)"
+            #f="ngForm"
+            class="border border-primary staff-content-form p-5 text-center" type="multipart/form-data"
+          >
+            <p class="h4 mb-4">Create post</p>
             <!-- Name -->
             <input
               type="text"
-              id="defaultSubscriptionFormPassword"
+              id="name"
               class="form-control mb-4"
               placeholder="Name"
               name="content_name"
-              required ngModel
-                #content_name="ngModel"
+              required
+              ngModel
+              #content_name="ngModel"
             />
-            
+
             <textarea
               class="form-control"
               id="exampleFormControlTextarea1"
-              rows="5"
+              rows="3" col="5"
               placeholder="Description"
               name="description"
-              required ngModel
-                #description="ngModel"
+              required
+              ngModel
+              #description="ngModel"
             ></textarea>
 
-            <br>
+            <br />
+
+            <div class="form-group">
+          
+              <select name="category" id="category" class="form-select" aria-label="Default select example" required
+                ngModel #category="ngModel">
+                <option value selected disabled>--Select Category--</option>
+                <option *ngFor="let category of categories" value="{{category.id}}">{{category.type}}</option>
+              </select>
+            </div>
             
-            <select
-              type="select"
-              id="category"
-              class="form-select mb-4"
-              placeholder="Category"
-              name="category"
-              required ngModel
-                #category="ngModel"
-            > <option value selected disabled>--Select Category--</option></select>
-            <label class="custom-file-label" for="customFile"
-              ></label
-            >
-            <input type="file" class="form-control" id="customFile"  name="content_image" required ngModel
-                #content_image="ngModel"/>
+            <!-- <label class="custom-file-label" for="customFile"></label>
+           <img [src]= PhotoFilePath > 
+            <input
+              type="file"
+              class="form-control"
+             #image
+              name="content_image"
+              (change)="uploadImage($event)"
+            /> -->
+
             <!-- <select  type="select"  class="form-select"    name="" id="" >
             <option value selected disabled>--Select file--</option>
             <option  name="content_image" required ngModel
@@ -54,14 +65,12 @@
           
           </select> -->
 
-          
             <br />
             <!-- Sign in button -->
-            <button class="btn btn-primary text-center"  type="submit" >
+            <button class="btn btn-primary text-center" type="submit">
               Submit
             </button>
           </form>
-        </div>
       </div>
     </div>
   </div>

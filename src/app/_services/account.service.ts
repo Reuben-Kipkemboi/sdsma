@@ -5,6 +5,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { environment } from '../../environments/environment';
 import { User } from '../_models';
+import {observable} from 'rxjs'
+
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +14,7 @@ import { User } from '../_models';
 export class AccountService {
   private userSubject: BehaviorSubject<User>;
   public user: Observable<User>;
+  urlProfile = "http://127.0.0.1:8000/api/profile/<username>"
 
   constructor(private router: Router, private http: HttpClient) {
     this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')!));
@@ -23,7 +26,8 @@ export class AccountService {
   }
   login(username: string, password: string) {
     return this.http
-      .post<User>(`${environment.apiUrl}/users/authenticate`, {
+      // .post<User>(`${environment.apiUrl}/api/login/`, {
+        .post<User>("http://127.0.0.1:8000/api/login/", {
         username,
         password,
       }).pipe(map((user) => {
@@ -43,19 +47,30 @@ export class AccountService {
   }
 
   register(user: User) {
-    return this.http.post(`${environment.apiUrl}/users/register`, user);
+    // "https://moti-vate.herokuapp.com/signup/staff/
+
+    // return this.http.post("https://moti-vate.herokuapp.com/signup/staff/", user);
+    return this.http.post("http://127.0.0.1:8000/signup/", user);
+  }
+  student_register(user: User) {
+    // "https://moti-vate.herokuapp.com/signup/staff/
+    return this.http.post(`${environment.apiUrl}/api/signup/student/`, user);
   }
 
+  getUser():Observable<any>{ 
+    return this.http.get<any>(this.urlProfile)
+
+  }
   getAll() {
-    return this.http.get<User[]>(`${environment.apiUrl}/users`);
+    return this.http.get<User[]>(`${environment.apiUrl}/all_users`);
   }
 
   getById(id: string) {
-    return this.http.get<User>(`${environment.apiUrl}/users/${id}`);
+    return this.http.get<User>(`${environment.apiUrl}/all_users/${id}`);
   }
 
   update(id: string, params: any) {
-    return this.http.put(`${environment.apiUrl}/users/${id}`, params).pipe(
+    return this.http.put(`${environment.apiUrl}/all_users/${id}`, params).pipe(
       map((x) => {
         // update stored user if the logged in user updated their own record
         if (id == this.userValue.id) {
@@ -72,7 +87,7 @@ export class AccountService {
   }
 
   delete(id: string) {
-    return this.http.delete(`${environment.apiUrl}/users/${id}`).pipe(
+    return this.http.delete(`${environment.apiUrl}/all_users/${id}`).pipe(
       map((x) => {
         // auto logout if the logged in user deleted their own record
         if (id == this.userValue.id) {
@@ -83,3 +98,6 @@ export class AccountService {
     );
   }
 }
+
+
+

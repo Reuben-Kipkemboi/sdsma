@@ -1,5 +1,6 @@
 export class Post {
-  id!: number;
+  id!: string;
+
   content_name!: string;
   description!: string;
   content_image!: string;
@@ -9,3 +10,4 @@ export class Post {
   date_posted!:string;
   category!: string;
   } 
+

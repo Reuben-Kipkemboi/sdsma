@@ -4,11 +4,10 @@ import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CategoryService {
-
-  apiUrl= environment.apiUrl
+  apiUrl = environment.apiUrl;
 
   constructor(private http:HttpClient) { }
 
@@ -18,5 +17,17 @@ export class CategoryService {
     // return this.http.get(
     //   environment.apiUrl + '/staff/create_categories/'
     // );
+
+  createCategory(
+    id: number,
+    type: string
+  ) {
+    return this.http.post(
+      'https://moti-vate.herokuapp.com/staff/create_categories/',
+      {
+        id,
+        type,
+      }
+    );
   }
 }

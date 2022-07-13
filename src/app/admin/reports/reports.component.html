@@ -1,25 +1,12 @@
+<!-- <mat-progress-bar value="40"></mat-progress-bar> -->
+
 
 <div class="progressBar">
   <p>Reports</p>
-  <div >
+  <div>
 
-    <div *ngFor="let post of postArr">
-    <p>Number of Posts:</p>
-    
-  </div>
+      <ul *ngFor="let report of admin_reportlist;let i = index;">
+        <li >{{report.type}}</li>
 
-<div class="motivation">Motivation
-<mat-progress-bar style="height: 20px;
-" [mode]="'determinate'"
-[value]="value"
-></mat-progress-bar>
-</div>
-<div>
-
-</div>
-</div>
-
-
-
-
-
+      </ul>
+    </div>
