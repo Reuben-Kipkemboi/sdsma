@@ -14,7 +14,7 @@ import {observable} from 'rxjs'
 export class AccountService {
   private userSubject: BehaviorSubject<User>;
   public user: Observable<User>;
-  urlProfile = "http://127.0.0.1:8000/api/profile/<username>"
+  urlProfile = "https://moti-vate.herokuapp.com/api/profile/<username>"
 
   constructor(private router: Router, private http: HttpClient) {
     this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')!));
@@ -27,7 +27,7 @@ export class AccountService {
   login(username: string, password: string) {
     return this.http
       // .post<User>(`${environment.apiUrl}/api/login/`, {
-        .post<User>("http://127.0.0.1:8000/api/login/", {
+        .post<User>("https://moti-vate.herokuapp.com/api/login/", {
         username,
         password,
       }).pipe(map((user) => {
@@ -50,7 +50,7 @@ export class AccountService {
     // "https://moti-vate.herokuapp.com/signup/staff/
 
     // return this.http.post("https://moti-vate.herokuapp.com/signup/staff/", user);
-    return this.http.post("http://127.0.0.1:8000/signup/", user);
+    return this.http.post("https://moti-vate.herokuapp.com/signup/", user);
   }
   student_register(user: User) {
     // "https://moti-vate.herokuapp.com/signup/staff/

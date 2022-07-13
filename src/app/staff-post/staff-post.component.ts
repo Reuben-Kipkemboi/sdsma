@@ -16,11 +16,6 @@ export class StaffPostComponent implements OnInit {
   ngOnInit() {
     this.getPosts();
   }
-
-
-  constructor(private router: Router,
-    private postsService: PostsService) {}
-
   constructor(
     private router: Router,
     private postsService: PostsService,

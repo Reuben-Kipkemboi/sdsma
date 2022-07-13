@@ -96,7 +96,7 @@
           <!-- Password input -->
           <div class="form-group mb-2">
             <label for="password">Password</label>
-            <input formControlName="password" name="password" class="form-control">
+            <input formControlName="password" name="password" class="form-control" type="password">
           </div>
 
           <div class="form-group text-center pt-4">
@@ -104,8 +104,7 @@
               <span class=" spinner-border-sm mr-1"></span>
               Login
             </button>
-          </div>
-          
+          </div>  
       </form>
       <p class="mt-2 text-center">Don't have an account:&nbsp; <a [routerLink]="['/register']"
         class="text-info text-decoration-none">Register</a></p>

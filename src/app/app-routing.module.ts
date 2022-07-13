@@ -51,13 +51,11 @@ const routes: Routes = [
   { path: 'footer', component: FooterComponent },
 
   { path: 'edit-staffprofile', component:EditStaffprofileComponent},
-  { path: 'post-details/:id', component:PostdetailsComponent}
-
-
+  { path: 'post-details/:id', component:PostdetailsComponent},
   { path: 'edit-staff-post/:id', component: EditStaffPostComponent },
   { path: 'staff-comments/:id', component: StaffCommentsComponent },
   { path: 'staff-profile/:id', component: StaffCommentsComponent },
-  { path: 'edit-staffprofile/:id',component:EditStaffprofileComponent}
+  { path: 'edit-staffprofile/:id',component:EditStaffprofileComponent},
   { path: 'staff-comments/:id',component :StaffCommentsComponent},
 
 ];
@@ -79,6 +77,6 @@ export const routingComponents=[StaffProfileComponent,
   StaffNavbarComponent,
 StaffCommentsComponent,
 StaffProfileComponent,
-EditStaffprofileComponent]
+EditStaffprofileComponent,
 StaffCommentsComponent]
 

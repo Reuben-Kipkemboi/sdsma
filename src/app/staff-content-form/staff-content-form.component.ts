@@ -103,25 +103,25 @@ export class StaffContentFormComponent implements OnInit {
     this.content_image = event.target.file[0];
   }
 
-  onTitleChanged(event: any) {
-    this.content_name = event.target.value;
-    )
+  // onTitleChanged(event: any) {
+  //   this.content_name = event.target.value;
+  //   )
 
-      .subscribe(
-        (response) => {
-          form.reset();
-          this.router.navigate(['/staff-page']);
-        })
-
-
-  }
+  //     .subscribe(
+  //       (response) => {
+  //         form.reset();
+  //         this.router.navigate(['/staff-page']);
+  //       })
 
 
+  // }
 
-  }
-  onDescriptionChanged(event:any){
-    this.description = event.target.value;
-  }
+
+
+  
+  // onDescriptionChanged(event:any){
+  //   this.description = event.target.value;
+  // }
 
   // newPost() {
   //   const uploadData = new FormData();
@@ -143,4 +143,6 @@ export class StaffContentFormComponent implements OnInit {
     });
 
 }
+}
+
 
