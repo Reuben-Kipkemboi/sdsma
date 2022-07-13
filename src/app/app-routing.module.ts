@@ -26,6 +26,7 @@ import { StudentRegisterComponent } from './student-register/student-register.co
 
 
 const routes: Routes = [
+  { path: '',   redirectTo: '/homepage', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'student_register', component: StudentRegisterComponent },
@@ -57,7 +58,6 @@ const routes: Routes = [
   { path: 'staff-profile/:id', component: StaffCommentsComponent },
   { path: 'edit-staffprofile/:id',component:EditStaffprofileComponent},
   { path: 'staff-comments/:id',component :StaffCommentsComponent},
-
 ];
 
 @NgModule({
