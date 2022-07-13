@@ -10,6 +10,7 @@ import { AccountService } from '../../_services';
 export class StdProfileComponent implements OnInit {
 
   user: User;
+  
   constructor(private accountService: AccountService) {
     this.user = this.accountService.userValue
    }

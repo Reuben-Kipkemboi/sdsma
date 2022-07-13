@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 
@@ -10,7 +10,11 @@ import { Observable } from 'rxjs';
 })
 export class PostsService {
   apiUrl = environment.apiUrl;
-  PhotoUrl = 'https://res.cloudinary.com/reuby/image/upload/v1/media/images_uploaded/';
+  PhotoUrl =
+    'https://res.cloudinary.com/reuby/image/upload/v1/media/images_uploaded/';
+  headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+  });
 
   constructor(private http: HttpClient) {}
 
@@ -21,12 +25,12 @@ export class PostsService {
   createPosts(
     id: string,
     content_name: string,
-    content_image: string,
-    video: string,
+    content_image: File,
+    video: File,
     description: string,
     category: string
   ) {
-    return this.http.post('https://moti-vate.herokuapp.com/staff/post/', {
+    return this.http.post('https://moti-vate.herokuapp.com/staff/post/' ,{
       id,
       content_name,
       content_image,
@@ -35,10 +39,12 @@ export class PostsService {
       category,
     });
   }
-  
 
-  uploadPhoto(formData:any) {
-    return this.http.post('https://moti-vate.herokuapp.com/staff/post/', formData);
+  uploadPhoto(formData: any) {
+    return this.http.post(
+      'https://moti-vate.herokuapp.com/staff/post/',
+      formData
+    );
   }
 
   updatePosts(
@@ -67,7 +73,10 @@ export class PostsService {
   }
 
   likePosts(id: number) {
-    return this.http.post('https://moti-vate.herokuapp.com/posts/' + id + '/like/',id );
+    return this.http.post(
+      'https://moti-vate.herokuapp.com/posts/' + id + '/like/',
+      id
+    );
   }
 }
 

@@ -9,12 +9,14 @@ import { Observable } from 'rxjs';
 export class CategoryService {
   apiUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http:HttpClient) { }
 
-  getCategory(): Observable<any> {
-    return this.http.get(
-      'https://moti-vate.herokuapp.com/staff/create_categories/'
-    );
+  getCategory(): Observable<any>{
+    return this.http.get(`${this.apiUrl}/staff/create_categories/`);
+
+    // return this.http.get(
+    //   environment.apiUrl + '/staff/create_categories/'
+    // );
   }
 
   createCategory(

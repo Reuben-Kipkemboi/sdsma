@@ -16,6 +16,7 @@ export class StaffPostComponent implements OnInit {
   ngOnInit() {
     this.getPosts();
   }
+
   constructor(
     private router: Router,
     private postsService: PostsService,
@@ -33,7 +34,7 @@ export class StaffPostComponent implements OnInit {
 
   deletePost(id: number) {
     this.postsService.deletePost(id).subscribe((response) => {
-      this.successMessage = 'Job removed';
+      this.successMessage = 'post removed';
     });
   }
 
