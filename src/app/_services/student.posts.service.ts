@@ -19,8 +19,8 @@ export class StudentPostService {
     return this.http.get(`${this.apiUrl}/student/post/${id}`);
   }
 
-  createPost(formData: any) {
-    return this.http.post(`${this.apiUrl}/student/post/`, formData);
+  createPost(postForm:any, formData: any) {
+    return this.http.post(`${this.apiUrl}/student/post/`, formData, postForm);
   }
 
   updatePosts(

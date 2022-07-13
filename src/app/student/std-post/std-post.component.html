@@ -10,12 +10,12 @@
   <br>
   <div class="post mb-5" *ngFor="let post of posts">
     <div class="card card-body">
-      <div class="image-body" *ngIf="post.content_image">
-        <img src="{{post.content_image}}" alt="">
-      </div>
       <!-- <img src="assets/images/logo2.jpeg" class="card-img-top card-image" alt="post image"> -->
-      <div class="card-body">
+      <div class="card-body text-center">
         <h5 class="card-header">{{post.content_name}}</h5>
+        <div class="image-body " *ngIf="post.content_image">
+          <img src="{{post.content_image}}" class="img-fluid" alt="">
+        </div>  
         <p class="text-start">{{post.description}}</p>
       </div>
       <div class="small d-flex justify-content-around mx-5 px-5">
@@ -49,3 +49,4 @@
   comments!:string;
   date_posted!:string;
   category!: string; -->
+

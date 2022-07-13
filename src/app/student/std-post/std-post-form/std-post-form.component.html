@@ -4,7 +4,7 @@
     <div class="col-md-6">
       <div class="card" style="margin-left: 40px">
         <div>
-          <form [formGroup]="postForm" (ngSubmit)="onSubmit()"
+          <form enctype="multipart/form-data" [formGroup]="postForm" (ngSubmit)="onSubmit()"
             class="border border-primary staff-content-form p-5 text-center" type="multipart/form-data">
             <p class="h4 mb-4">Create post</p>
             <!-- Name -->
@@ -37,14 +37,15 @@
                 <option value selected disabled>--Select Category--</option>
                 <option *ngFor="let category of categories" value="{{category.id}}">{{category.type}}</option>
               </select>
-              <div *ngIf="submitted && f['category'].errors" class="invalid-feedback">
+              <!-- <div *ngIf="submitted && f['category'].errors" class="invalid-feedback">
                 <div class="text-center" *ngIf="f['category'].errors['required']">Please select category</div>
-              </div>
-            </div>
+              </div> -->
+            </div><br>
 
-            <label class="custom-file-label" for="customFile"></label>
-            <img src="">
-            <input type="file" class="form-control" name="content_image" (change)="onChange($event)" />
+            <label class="custom-file-label" for="content_image">
+            <input #fileInput type="file" accept="image/*" id="content_image"
+             class="form-control" name="content_image" (change)="onChange(fileInput)" />
+            </label>
 
             <!-- <select  type="select"  class="form-select"    name="" id="" >
             <option value selected disabled>--Select file--</option>
