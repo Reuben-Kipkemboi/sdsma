@@ -7,5 +7,6 @@ p, li, button, a {
 }
 html, body {
   max-width: 100%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+  font-family: 'Poppins', sans-serif;
 }
