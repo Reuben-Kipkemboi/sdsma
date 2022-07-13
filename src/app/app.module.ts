@@ -48,6 +48,7 @@ import { ErrorInterceptor, JwtInterceptor } from './_helpers';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
 
 import { StudentRegisterComponent } from './student-register/student-register.component';
+import { AdminCategoryComponent } from './admin-category/admin-category.component';
 
 
 @NgModule({
@@ -89,6 +90,7 @@ import { StudentRegisterComponent } from './student-register/student-register.co
     EditStaffPostComponent,
     StdNavComponent,
     StudentRegisterComponent,
+    AdminCategoryComponent,
     // StudentRegisterComponent,
 
   ],
