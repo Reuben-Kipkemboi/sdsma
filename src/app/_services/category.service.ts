@@ -17,6 +17,7 @@ export class CategoryService {
     // return this.http.get(
     //   environment.apiUrl + '/staff/create_categories/'
     // );
+  }
 
   createCategory(
     id: number,
