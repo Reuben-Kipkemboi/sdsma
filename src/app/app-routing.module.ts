@@ -38,7 +38,7 @@ const routes: Routes = [
     ]
   },
   { path: 'admin', component: AdminComponent },
-  { path: '', component: HomepageComponent },
+  { path: 'homepage', component: HomepageComponent },
   { path: 'heropage', component: HeropageComponent },
   { path: 'editprofile', component: EditprofileComponent },
   { path: 'student-page', component: StudentComponent },
