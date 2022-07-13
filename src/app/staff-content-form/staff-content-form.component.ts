@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { CategoryService } from '../_services/category.service';
 import { Router } from '@angular/router';
 import { PostsService } from '../_services/posts.service';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-staff-content-form',
@@ -11,22 +12,29 @@ import { PostsService } from '../_services/posts.service';
   styleUrls: ['./staff-content-form.component.css'],
 })
 export class StaffContentFormComponent implements OnInit {
+  content_name!: string;
+  content_image!: File;
+  category!: string;
+  description!: string;
   constructor(
+    private http: HttpClient,
     private categoryService: CategoryService,
     private account: AccountService,
     private post: PostsService,
     private router: Router
   ) {}
-@Input()
+
   categories: any = [];
-  errorMessages: any;
-  successMessage: any;
+  // errorMessages: any;
+  // successMessage: any;
   error = false;
   loading = false;
-  userId: any;
-  content_image:any;
-  PhotoFilePath:any;
+  // userId: any;
+  // content_image: any;
+  PhotoFilePath: any;
+  // content_name: any;
   // selectedFile: any;
+  image_name!: string;
 
   ngOnInit(): void {
     this.getCategory();
@@ -50,7 +58,10 @@ export class StaffContentFormComponent implements OnInit {
 
   createPosts(form: NgForm) {
     let data = form.form.value;
-    this.loading = true;
+    // console.log(event.target.files);
+    // console.log(typeof data);
+    data.content_image = this.image_name;
+    console.log(data);
     this.post
       .createPosts(
         data.id,
@@ -66,24 +77,103 @@ export class StaffContentFormComponent implements OnInit {
       });
   }
 
-  uploadImage(event:any){
-    var file =event.target.files[0];
-    const formData:FormData = new FormData();
-    formData.append('uploadedFile',file,file.name);
+  uploadImage(event: any) {
+    console.log(event)
+    var file = event.target.files[0];
+    this.image_name=file.name
+//     this.ngform.get('content_image').setValue(file);
+//     console.log(file);
+//     const formData: FormData = new FormData();
+//     console.log(formData);
+//     // formData.append('uploadedFile', file, file.name);
 
-    this.post.uploadPhoto(formData).subscribe((data:any)=>{
-      this.content_image=data.tostring()
-      this.PhotoFilePath=this.post.PhotoUrl+this.content_image
-
-    }
-
-    )
+// console.log(formData);
+    // this.post.uploadPhoto(event).subscribe((data: any) => {
+    //   console.log(data)
+    //   this.content_image = data.tostring();
+    //   this.PhotoFilePath = this.post.PhotoUrl + this.content_image;
+    //   console.log(this.PhotoFilePath);
+    // });
   }
+  // uploadImage(event: any) {
+  //   this.content_image = <File>event.target.files[0];
+  //   console.log(event);
+  // }
+
+  // uploadImage(event: any) {
+  //   console.log(event);
+  //   var file = event.target.files[0];
+  //   this.image_name = file.name;
+    //     this.ngform.get('content_image').setValue(file);
+    //     console.log(file);
+    //     const formData: FormData = new FormData();
+    //     console.log(formData);
+    //     // formData.append('uploadedFile', file, file.name);
+
+    // console.log(formData);
+  //   this.post.uploadPhoto(event).subscribe((data: any) => {
+  //     //   console.log(data)
+  //     this.content_image = data.tostring();
+  //     this.PhotoFilePath = this.post.PhotoUrl + this.content_image;
+  //     console.log(this.PhotoFilePath);
+  //   });
+  // }
+
+  onImageChanged(event: any) {
+    this.content_image = event.target.file[0];
+  }
+
+  // onTitleChanged(event: any) {
+  //   this.content_name = event.target.value;
+
+
+  // onTitleChanged(event: any) {
+  //   this.content_name = event.target.value;
+  //   )
+
+  //     .subscribe(
+  //       (response) => {
+  //         form.reset();
+  //         this.router.navigate(['/staff-page']);
+  //       })
+
+
+  // }
+
+
+
+
+  onDescriptionChanged(event:any){
+    this.description = event.target.value;
+  }
+
+  // }
+
+
+
+  
+  // onDescriptionChanged(event:any){
+  //   this.description = event.target.value;
+  // }
 
   getCategory() {
     this.categoryService.getCategory().subscribe((data) => {
       this.categories = data;
     });
   }
-}
+
+  // newPost() {
+  //   const uploadData = new FormData();
+  //   uploadData.append('content_name', this.content_name);
+  //   uploadData.append('content_image', this.content_image);
+  //   uploadData.append('description', this.content_name);
+  //   uploadData.append('category', this.category);
+  //   this.http
+  //     .post('https://moti-vate.herokuapp.com/staff/post/', uploadData)
+  //     .subscribe
+  //     // (data: any) => console.log(data),
+  //     // (error: any) => console.log(error)
+  //     ();
+  // }
+
 

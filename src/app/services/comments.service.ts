@@ -13,6 +13,6 @@ export class CommentsService {
   constructor(private http:HttpClient) { }
   // get all comments
   getComments():Observable<any> {
-    return this.http.get(environment.apiUrl+'/all_users/')
+    return this.http.get(environment.apiUrl+'/all_comments/')
   }
 }

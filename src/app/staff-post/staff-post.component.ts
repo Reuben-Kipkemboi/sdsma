@@ -24,7 +24,7 @@ export class StaffPostComponent implements OnInit {
   ) {}
 
   successMessage: any;
-  userId: any;
+
 
   getPosts() {
     this.postsService.getPosts().subscribe((data) => {
@@ -34,7 +34,7 @@ export class StaffPostComponent implements OnInit {
 
   deletePost(id: number) {
     this.postsService.deletePost(id).subscribe((response) => {
-      this.successMessage = 'Job removed';
+      this.successMessage = 'post removed';
     });
   }
 

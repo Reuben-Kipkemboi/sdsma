@@ -1,7 +1,7 @@
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, observable } from 'rxjs';
 
 
 @Injectable({
@@ -15,5 +15,11 @@ export class UsersService {
   getUsers():Observable<any> {
     return this.http.get(environment.apiUrl+'/all_users/')
   }
+
+// find one user
+  // findOne(id:number):Observable<User>{
+  //   return  this.http.get(environment.apiUrl+'/all_users/'+ id).pipe(map((user:User)=>user)
+
+  // }
 
 }

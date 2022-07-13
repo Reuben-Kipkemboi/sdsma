@@ -4,13 +4,9 @@ export class User {
     password!: string;
     first_name!: string;
     last_name!: string;
-    email!:string
+    avatar!: string
+    contact!: string;
+    bio!: string;
+    email!: string;
     token!: string;
-
-
-//     username
-// password
-// email
-// first_name
-// last_name
 }
