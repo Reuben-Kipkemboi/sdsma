@@ -77,6 +77,24 @@ export class StaffContentFormComponent implements OnInit {
       });
   }
 
+  uploadImage(event: any) {
+    console.log(event)
+    var file = event.target.files[0];
+    this.image_name=file.name
+//     this.ngform.get('content_image').setValue(file);
+//     console.log(file);
+//     const formData: FormData = new FormData();
+//     console.log(formData);
+//     // formData.append('uploadedFile', file, file.name);
+
+// console.log(formData);
+    // this.post.uploadPhoto(event).subscribe((data: any) => {
+    //   console.log(data)
+    //   this.content_image = data.tostring();
+    //   this.PhotoFilePath = this.post.PhotoUrl + this.content_image;
+    //   console.log(this.PhotoFilePath);
+    // });
+  }
   // uploadImage(event: any) {
   //   this.content_image = <File>event.target.files[0];
   //   console.log(event);
@@ -105,6 +123,9 @@ export class StaffContentFormComponent implements OnInit {
     this.content_image = event.target.file[0];
   }
 
+  // onTitleChanged(event: any) {
+  //   this.content_name = event.target.value;
+
 
   // onTitleChanged(event: any) {
   //   this.content_name = event.target.value;
@@ -121,6 +142,15 @@ export class StaffContentFormComponent implements OnInit {
 
 
 
+
+  onDescriptionChanged(event:any){
+    this.description = event.target.value;
+  }
+
+  // }
+
+
+
   
   // onDescriptionChanged(event:any){
   //   this.description = event.target.value;
@@ -131,7 +161,6 @@ export class StaffContentFormComponent implements OnInit {
       this.categories = data;
     });
   }
-t
 
   // newPost() {
   //   const uploadData = new FormData();
@@ -146,7 +175,5 @@ t
   //     // (error: any) => console.log(error)
   //     ();
   // }
-}
-}
 
 

@@ -52,7 +52,6 @@ const routes: Routes = [
 
   { path: 'edit-staffprofile', component:EditStaffprofileComponent},
   { path: 'post-details/:id', component:PostdetailsComponent},
-
   { path: 'edit-staff-post/:id', component: EditStaffPostComponent },
   { path: 'staff-comments/:id', component: StaffCommentsComponent },
   { path: 'staff-profile/:id', component: StaffCommentsComponent },
