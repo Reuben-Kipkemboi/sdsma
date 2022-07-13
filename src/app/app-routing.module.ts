@@ -41,7 +41,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'homepage', component: HomepageComponent },
   { path: 'heropage', component: HeropageComponent },
-  { path: 'editprofile', component: EditprofileComponent },
+  { path: 'editprofile/:id', component: EditprofileComponent },
   { path: 'student-page', component: StudentComponent },
   { path: 'profile', component: StaffProfileComponent },
   { path: 'staff-page', component: StaffPageComponent },

@@ -5,7 +5,8 @@ import { CommentsService } from '../services/comments.service'
 import { LikesService } from '../services/likes.service'
 import { UsersService } from '../services/users.service'
 import { AdminreportService } from '../services/adminreport.service'
-
+import {AdminprofileService} from '../services/adminprofile.service'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -18,6 +19,8 @@ export class AdminComponent implements OnInit {
   likeslist:any=[];
   userslist:any=[];
   admin_reportlist:any=[];
+  admin_profileArr:any=[];
+  id:any;
 
   ngOnInit() {
     this.getPosts();
@@ -25,6 +28,13 @@ export class AdminComponent implements OnInit {
     this.getLikes();
     this.getUsers();
     this.getadmin_report();
+    this.route.params.subscribe(
+      (params:any)=>
+      {console.log(params)
+        this.getadmin_profile(params.id);
+      }
+    )
+    // this.getadmin_profile(params.id);
 
   }
 
@@ -35,6 +45,8 @@ export class AdminComponent implements OnInit {
     private likesService: LikesService,
     private usersService: UsersService,
     private adminreportService: AdminreportService,
+    private adminprofileService: AdminprofileService,
+    private route: ActivatedRoute,
   ) { }
 
   getPosts() {
@@ -67,4 +79,9 @@ export class AdminComponent implements OnInit {
     })
   }
 
+  getadmin_profile(id: number){
+    this.adminprofileService.getAdmin_profile(id).subscribe(data => {
+      this.admin_profileArr=data;
+    })
+  }
 }
