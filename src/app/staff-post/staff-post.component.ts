@@ -17,14 +17,11 @@ export class StaffPostComponent implements OnInit {
     this.getPosts();
   }
 
-
-  
-
-    constructor(
-      private router: Router,
-      private postsService: PostsService,
-      accountService: AccountService
-    ) {}
+  constructor(
+    private router: Router,
+    private postsService: PostsService,
+    accountService: AccountService
+  ) {}
 
   successMessage: any;
 
@@ -37,7 +34,7 @@ export class StaffPostComponent implements OnInit {
 
   deletePost(id: number) {
     this.postsService.deletePost(id).subscribe((response) => {
-      this.successMessage = 'Job removed';
+      this.successMessage = 'post removed';
     });
   }
 

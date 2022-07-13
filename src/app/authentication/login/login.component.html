@@ -1,8 +1,8 @@
-<!-- Navbar -->
+<!--  Navbar-->
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-  <!-- Container wrapper -->
+  <!-- Container wrapper  -->
   <div class="container-fluid mx-4">
-    <!-- Navbar brand -->
+     <!-- Navbar brand  -->
     <a class="navbar-brand" [routerLink]="['/homepage']">
       <img src="assets/images/logo.png" height="40" alt="" loading="lazy" />
     </a>
@@ -27,7 +27,7 @@
       <!-- Left links -->
 
       <ul class="navbar-nav mb-2 mb-lg-0">
-        <!-- Navbar dropdown -->
+         <!-- Navbar dropdown  -->
         <li class="nav-item">
         </li>
         <li class="nav-item">
@@ -40,9 +40,9 @@
   </div>
   <!-- Container wrapper -->
 </nav>
-<!-- Navbar -->
+<!-- Navbar  -->
 
-<div class="container mt-4 pt-4">
+<!--<div class="container mt-4 pt-4">
   <div class="row card-border">
     <div class="col-md-7 bulb"></div>
     <div class="col-md-5 pt-5 mt">
@@ -77,4 +77,39 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+
+<div class="container mt-4 pt-4">
+  <div class="row card-border">
+    <div class="col-md-7 bulb"></div>
+    <div class="col-md-5 pt-5 mt">
+      <div class="card">
+        <h4 class="card-header py-3 text-center">Login</h4>
+        <form #f="ngForm" [formGroup]="form" (ngSubmit)="loginUser()" class="p-5">
+          <!-- username input -->
+          <div class="form-group mb-2">
+            <label for="username">Username</label>
+              <input formControlName="username" id="form3Example3" name="username" type="username" class="form-control form-control" placeholder="username" required/>
+          </div>
+          
+
+          <!-- Password input -->
+          <div class="form-group mb-2">
+            <label for="password">Password</label>
+            <input formControlName="password" name="password" class="form-control" type="password">
+          </div>
+
+          <div class="form-group text-center pt-4">
+            <button class="btn btn-primary btn-block"  type="submit">
+              <span class=" spinner-border-sm mr-1"></span>
+              Login
+            </button>
+          </div>  
+      </form>
+      <p class="mt-2 text-center">Don't have an account:&nbsp; <a [routerLink]="['/register']"
+        class="text-info text-decoration-none">Register</a></p>
+        
+
+    </div>
+  </div>
+
