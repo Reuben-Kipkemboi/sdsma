@@ -30,12 +30,12 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'student_register', component: StudentRegisterComponent },
   {
-    path: 'student',
-    component: StudentComponent,
-    children: [
-      { path: 'profile/edit', component: StdProfileComponent },
-      { path: 'add/post', component: StdPostFormComponent },
-    ],
+    path:'',
+    children:[
+      {path:'student', component:StudentComponent},
+      {path: 'profile/edit', component: StdProfileComponent},
+      {path: 'add/post', component: StdPostFormComponent}
+    ]
   },
   { path: 'admin', component: AdminComponent },
   { path: '', component: HomepageComponent },
