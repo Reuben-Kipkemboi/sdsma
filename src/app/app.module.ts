@@ -1,6 +1,4 @@
-
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,12 +40,10 @@ import { CategoriesComponent } from './student/panel/categories/categories.compo
 import { StdSuggestionComponent } from './student/panel/std-suggestion/std-suggestion.component';
 import { StdNavComponent } from './student/std-nav/std-nav.component';
 import { EditStaffPostComponent } from './edit-staff-post/edit-staff-post.component';
-
 import { ErrorInterceptor, JwtInterceptor } from './_helpers';
-
 import { PostdetailsComponent } from './postdetails/postdetails.component';
-
 import { StudentRegisterComponent } from './student-register/student-register.component';
+import { AdminCategoryComponent } from './admin-category/admin-category.component';
 import { StdCommentComponent } from './student/std-post/std-comment/std-comment.component';
 
 
@@ -90,6 +86,7 @@ import { StdCommentComponent } from './student/std-post/std-comment/std-comment.
     EditStaffPostComponent,
     StdNavComponent,
     StudentRegisterComponent,
+    AdminCategoryComponent,
     StdCommentComponent,
     // StudentRegisterComponent,
 
