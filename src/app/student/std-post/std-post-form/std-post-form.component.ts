@@ -37,28 +37,28 @@ export class StdPostFormComponent implements OnInit {
     this.getCategory();
 
   }
-  onChange(fileInput: any) {
-    if (fileInput.files.length > 0) {
-      const file: File = fileInput.files[0];
-      const reader = new FileReader();
-      reader.addEventListener('load', (event:any) => {
-        this.selectedFile =new UploadSnippet(event.target.result, file);
-        // this.postService.createPost(this.selectedFile.file).subscribe(
-        //   (res) => {
-        //     this.alertService.success('Posted successfully')
-        //   },
-        //   (err) => {
-        //   this.alertService.error(err)
-        //   })
-      });
-      reader.readAsDataURL(file);
-      // this.video = event.target.files[0];
-      // this.postForm.get('content_image')
-      const formData = new FormData();
-      formData.append('content_image', file, file.name);
-      // formData.append('video', this.video, this.video.name )
-    }
-  }
+  // onChange(fileInput: any) {
+  //   if (fileInput.files.length > 0) {
+  //     const file: File = fileInput.files[0];
+  //     const reader = new FileReader();
+  //     reader.addEventListener('load', (event:any) => {
+  //       this.selectedFile =new UploadSnippet(event.target.result, file);
+  //       // this.postService.createPost(this.selectedFile.file).subscribe(
+  //       //   (res) => {
+  //       //     this.alertService.success('Posted successfully')
+  //       //   },
+  //       //   (err) => {
+  //       //   this.alertService.error(err)
+  //       //   })
+  //     });
+  //     reader.readAsDataURL(file);
+  //     // this.video = event.target.files[0];
+  //     // this.postForm.get('content_image')
+  //     const formData = new FormData();
+  //     formData.append('content_image', file, file.name);
+  //     // formData.append('video', this.video, this.video.name )
+  //   }
+  // }
 
   // convenience getter for easy access to form fields
   get f() {
@@ -73,7 +73,7 @@ export class StdPostFormComponent implements OnInit {
     }
     this.loading = true;
     this.postService
-      .createPost(this.postForm.value, this.selectedFile.file)
+      .createPost(this.postForm.value)
       .pipe(first())
       .subscribe(
         (data) => {

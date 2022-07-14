@@ -1,8 +1,9 @@
+
 <!-- <mat-progress-bar value="40"></mat-progress-bar> -->
 
 
 <div class="progressBar">
-  <p>Categories</p>
+  <p align="center"><b>Categories</b></p>
   <div>
 
       <ul *ngFor="let report of admin_reportlist;let i = index;">
@@ -10,3 +11,17 @@
 
       </ul>
     </div>
+    <div class="d-flex justify-content-center mb-2">
+      
+      <a
+        routerLink="/admin-category"
+        href="#"
+        class="btn btn-light btn-lg"
+      >
+        Add Category</a
+      >
+    </div>
+
+
+  </div>
+
