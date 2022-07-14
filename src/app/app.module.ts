@@ -1,4 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import { TextFieldModule } from '@angular/cdk/text-field';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -100,7 +101,8 @@ import { StdCommentComponent } from './student/std-post/std-comment/std-comment.
     BrowserAnimationsModule,
     MatGridListModule,
     MatProgressBarModule,
-    HttpClientModule
+    HttpClientModule,
+    TextFieldModule,
     // NgCircleProgressModule.forRoot()
 
   ],

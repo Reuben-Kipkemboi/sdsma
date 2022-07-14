@@ -5,3 +5,17 @@
 .card-body{
     min-height: 13rem;
 }
+.normal{
+    text-transform: none;
+}
+
+.width{
+    width: 5rem;
+    right: 3%;
+    bottom: 100%;
+}
+
+/* .float-right:hover{
+    border: none;
+    box-shadow: inset;
+} */
