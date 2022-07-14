@@ -37,15 +37,15 @@
                 <option value selected disabled>--Select Category--</option>
                 <option *ngFor="let category of categories" value="{{category.id}}">{{category.type}}</option>
               </select>
-              <!-- <div *ngIf="submitted && f['category'].errors" class="invalid-feedback">
+              <div *ngIf="submitted && f['category'].errors" class="invalid-feedback">
                 <div class="text-center" *ngIf="f['category'].errors['required']">Please select category</div>
-              </div> -->
+              </div>
             </div><br>
 
-            <label class="custom-file-label" for="content_image">
+            <!-- <label class="custom-file-label" for="content_image">
             <input #fileInput type="file" accept="image/*" id="content_image"
              class="form-control" name="content_image" (change)="onChange(fileInput)" />
-            </label>
+            </label> -->
 
             <!-- <select  type="select"  class="form-select"    name="" id="" >
             <option value selected disabled>--Select file--</option>
